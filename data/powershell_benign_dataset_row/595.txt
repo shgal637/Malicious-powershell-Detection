@@ -1,0 +1,1 @@
+function Install-PowerShellPowerUp{param([switch]$Force)Set-Location $PSprofile.PathInvoke-Expression "$($PSProfile.Install.FullName) -Force:`$Force"Set-Location $WorkingPath}

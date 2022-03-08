@@ -1,0 +1,1 @@
+﻿function Test-GetAvailableDelegationsList{$location = Get-ProviderLocation ResourceManagementtry{$results = Get-AzAvailableServiceDelegation -Location $location;Assert-NotNull $results;}finally{Clean-ResourceGroup $rgname}}

@@ -1,0 +1,1 @@
+Param([int[]] $nums)Write-Output "Starting process"$sum = ($nums | Measure-Object -Sum).SumWrite-Output "Process completed"Write-Output $sum

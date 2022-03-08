@@ -1,0 +1,1 @@
+enum DiscordGatewayEventCode {UnknownError = 4000UnknownOpcode = 4001DocodeError = 4002NotAuthenticated = 4003AuthenticationFailed = 4004AlreadyAuthenticated = 4005InvalidSeq = 4007RateLimited = 4008SessionTimeout = 4009InvalidShard = 4010ShardingRequired = 4011}

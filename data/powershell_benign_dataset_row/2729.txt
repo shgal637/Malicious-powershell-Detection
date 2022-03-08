@@ -1,0 +1,1 @@
+$ErrorActionPreference = "SilentlyContinue"$o = "" | Select-Object IISInstalledif ((Get-ItemProperty HKLM:\Software\Microsoft\InetStp\Components\).W3SVC) {$o.IISInstalled = "True"} else {$o.IISInstalled = "False"}$o

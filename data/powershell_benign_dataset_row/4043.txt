@@ -1,0 +1,1 @@
+﻿function Test-SubscriptionGetResourceUsage{$subscriptionResourceUsage = Get-AzCdnSubscriptionResourceUsageAssert-True {$subscriptionResourceUsage.Count -eq 1}Assert-True {$subscriptionResourceUsage[0].CurrentValue -eq 16}}function Test-SubscriptionEdgeNode{$edgeNodes = Get-AzCdnEdgeNodesAssert-False {$edgeNodes -eq $null}}
