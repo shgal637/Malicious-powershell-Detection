@@ -1,0 +1,1 @@
+﻿Get-PackageProvider -Name NuGet -ForceBootstrap | Out-NullInstall-Module PSDepend -ForceInvoke-PSDepend -ForceSet-BuildEnvironmentInvoke-psake .\.build\2.psake.ps1exit ( [int]( -not $psake.build_success ) )

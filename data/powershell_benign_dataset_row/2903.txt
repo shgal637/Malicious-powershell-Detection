@@ -1,0 +1,1 @@
+Framework '3.5'task default -depends AspNetCompilertask AspNetCompiler {if ( $IsMacOS -OR $IsLinux ) {}else {aspnet_compilerif ($LastExitCode -ne 1) {throw 'Error: Could not execute aspnet_compiler'}$global:LastExitCode = 0}}

@@ -1,0 +1,1 @@
+﻿Configuration DummyConfig{Import-DscResource -ModuleName PSDesiredStateConfigurationScript dummyscript{SetScript = 'Write-Verbose -Verbose "Testing Dummy script!!"'GetScript = "Test dummyscript"TestScript = {$false}}}

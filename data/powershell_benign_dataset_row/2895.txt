@@ -1,0 +1,1 @@
+Framework '4.0'task default -depends MsBuildtask MsBuild {if ( $IsMacOS -OR $IsLinux ) {}else {exec { msbuild /version /nologo }}}

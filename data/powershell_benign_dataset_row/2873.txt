@@ -1,0 +1,1 @@
+Task Default -depends Compile,TestTask Compile -depends CompileSolutionA,CompileSolutionBTask Test -depends UnitTests,IntegrationTestsTask CompileSolutionA -description 'Compiles solution A' {}Task CompileSolutionB {}Task UnitTests -alias 'ut' {}Task IntegrationTests {}

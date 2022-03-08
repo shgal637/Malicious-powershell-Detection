@@ -1,0 +1,1 @@
+TaskSetup {"Executing task setup"}TaskTearDown {"Executing task tear down"}Task default -depends TaskBTask TaskA {"TaskA executed"}Task TaskB -depends TaskA {"TaskB executed"}

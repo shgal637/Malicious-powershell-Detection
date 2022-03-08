@@ -1,0 +1,1 @@
+function Get-NormalizedVersionString{param([Parameter(Mandatory = $true)][string]$Version)[Version]$ParsedVersion = $nullif ([System.Version]::TryParse($Version, [ref]$ParsedVersion)) {$Build = $ParsedVersion.Buildif ($Build -eq -1) {$Build = 0}return "$($ParsedVersion.Major).$($ParsedVersion.Minor).$Build"}return $Version}

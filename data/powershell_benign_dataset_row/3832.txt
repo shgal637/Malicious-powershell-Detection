@@ -1,0 +1,1 @@
+function OperationsListTest{Write-Debug "Get Operations List"$OperationsList = Get-AzRelayOperationAssert-True { $OperationsList.Count -gt 0 }}
