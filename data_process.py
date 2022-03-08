@@ -23,7 +23,13 @@ class MyDataset(Dataset):
         # 读取数据并且处理数据
         with open(path, mode='r', encoding='utf-8') as f:
             self.file = json.load(f) # dict type
-        
+        for line in self.file:
+            features = []
+            # extract the features
+            # waiting for adding......
+
+            self.text_list.append(features)
+            self.label_list.append(line['label'])
 
     # 获取数据长度
 	def __len__(self):
@@ -33,9 +39,9 @@ class MyDataset(Dataset):
     def __getitem__(self, index):
         return self.text_list[index], self.label_list[index]
 
-def Txt2json():
+def predata():
     '''
-	turn the txt to json, in order to train and test the model
+	turn the datasets to json, and create dataset for training and testing
 	:return: json file, train and test
 	'''
     # 准备json格式
@@ -101,8 +107,12 @@ def alter_data(path,label,option):
     return 0
 
 
-# 用于DataLoader装载数据时进一步处理batch数据
 def batch_process(batch):
+    '''
+    用于DataLoader装载数据时进一步处理batch数据
+    :param batch:batch size
+    :return:
+    '''
     text_list, label_list = zip(*batch)
     text_list_ = []
 

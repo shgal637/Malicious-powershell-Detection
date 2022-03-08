@@ -101,7 +101,7 @@ if __name__ == '__main__':
 	torch.backends.cudnn.benchmark = False
 
 	# 创建数据集
-	# Txt2json()
+	# predata()
 	print('prepare trainset')
 	train_dataset = MyDataset(Trainjson)
 	print('prepare testset')
