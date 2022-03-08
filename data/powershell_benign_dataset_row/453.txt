@@ -1,0 +1,1 @@
+﻿Register-PSFConfigValidation -Name "long" -ScriptBlock {Param ($Value)$Result = New-Object PSOBject -Property @{Success = $TrueValue   = $nullMessage = ""}try { [long]$number = $Value }catch{$Result.Message = "Not a long: $Value"$Result.Success = $Falsereturn $Result}$Result.Value = $numberreturn $Result}

@@ -1,0 +1,1 @@
+param([int]$Count=50, [int]$DelayMilliseconds=200)function Write-Item($itemCount) {$i = 1while ($i -le $itemCount) {$str = "Output $i"Write-Output $str$i = $i + 1Start-Sleep -Milliseconds $DelayMilliseconds}}function Do-Work($workCount) {Write-Output "Doing work..."Write-Item $workcountWrite-Host "Done!"}Do-Work $Count

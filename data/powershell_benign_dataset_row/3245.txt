@@ -1,0 +1,1 @@
+class CommandAuthorizationResult {[bool]$Authorized[string]$MessageCommandAuthorizationResult() {$this.Authorized = $true}CommandAuthorizationResult([bool]$Authorized) {$this.Authorized = $Authorized}CommandAuthorizationResult([bool]$Authorized, [string]$Message) {$this.Authorized = $Authorized$this.Message = $Message}}

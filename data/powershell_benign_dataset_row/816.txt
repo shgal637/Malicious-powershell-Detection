@@ -1,0 +1,1 @@
+﻿. .\ReferenceFileA.ps1. ./ReferenceFileB.ps1. .\ReferenceFileC.ps1function My-Function ($myInput){My-Function $myInput}Get-ChildItem
