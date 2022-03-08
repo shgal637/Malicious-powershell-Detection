@@ -7,3 +7,7 @@ path_mixed = "./data/mixed_malicious"                # 混杂样本相对路径
 path_benign = "./data/powershell_benign_dataset"     # 良性样本相对路径
 Trainjson = './data/train.json'                      # 训练数据集json格式
 Testjson = './data/test.json'                        # 测试数据集json格式
+Traintxt = './data/train.txt'
+Testtxt = './data/test.txt'
+embed_dim = 300     # 暂时的参数，注意更换模型
+epoch = 100

@@ -12,9 +12,6 @@ import numpy as np
 from torch.utils.data import DataLoader
 from data_process import *
 
-# config
-embed_dim = 300
-epoch = 100
 
 # 训练函数
 def train(epochs):
@@ -25,9 +22,7 @@ def train(epochs):
 		for batch in train_iter:
 			input_, label = batch
 			optimizer.zero_grad()  # 每次迭代前设置grad为0
-
 			output = model(input_)
-
 			loss = criterion(output, label)  # 计算loss
 			loss.backward()  # 反向传播
 			optimizer.step()  # 更新模型参数
@@ -103,15 +98,19 @@ if __name__ == '__main__':
 	# 创建数据集
 	# predata()
 	print('prepare trainset')
-	train_dataset = MyDataset(Trainjson)
+	# train_dataset = MyDataset(Trainjson)
+	train_dataset = MyDataset(Traintxt)
 	print('prepare testset')
-	test_dataset = MyDataset(Testjson)
+	# test_dataset = MyDataset(Testjson)
+	test_dataset = MyDataset(Testtxt)
 	print('prepare train iter')
 	train_iter = DataLoader(train_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
 	print('prepare test iter')
-	test_iter = DataLoader(test_dataset, batch_size=25, shuffle=False, collate_fn=batch_process)
+	test_iter = DataLoader(test_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
 
 	# 定义模型
+	# 此处只是初始代码，真正的model应该是随机森林分类器，而不是LSTM模型
+	# Waiting for adding......
 	model = LSTM_Network().to(device)
 
 	# 定义loss函数、优化器
