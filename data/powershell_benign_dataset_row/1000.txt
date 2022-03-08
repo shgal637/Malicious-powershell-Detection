@@ -1,0 +1,1 @@
+$myEndpoint = "<your-endpoint-URL>"$subID = (Get-AzureRmSubscription -SubscriptionName "<subscription-name>").IdNew-AzureRmEventGridSubscription -ResourceId "/subscriptions/$subID" -Endpoint $myEndpoint -EventSubscriptionName demoSubscriptionToAzureSub

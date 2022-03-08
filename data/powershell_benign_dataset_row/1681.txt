@@ -1,0 +1,1 @@
+$dnsservers = "192.168.1.100","192.168.1.1"$computers = Get-Content ComputerList.txtforeach ($comp in $computers){$adapters = gwmi -q "select * from win32_networkadapterconfiguration where ipenabled='true'" -ComputerName $compforeach ($adapter in $adapters){$adapter.setDNSServerSearchOrder($dnsservers)}}
