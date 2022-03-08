@@ -1,1 +1,0 @@
-$ErrorActionPreference = 'Stop'Set-StrictMode -Version Latestproperties {$container = @{}}Task default -depends task2Task Step1 -alias task1 {'Hi from Step1 (task1)'}Task Step2 -alias task2 -depends task1 {'Hi from Step2 (task2)'}

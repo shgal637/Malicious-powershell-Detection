@@ -1,1 +1,0 @@
-class ConnectionConfig {[string]$Endpoint[pscredential]$CredentialConnectionConfig() {}ConnectionConfig([string]$Endpoint, [pscredential]$Credential) {$this.Endpoint = $Endpoint$this.Credential = $Credential}}

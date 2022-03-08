@@ -1,1 +1,0 @@
-if (Get-Command logparser.exe) {$lpquery = @"SELECTUserAcct,UserPath,Subkey,KeyLastWriteTime,Value,Count,PSComputerNameFROM*LogUserAssist.tsvORDER BYKeyLastWriteTime DESC"@& logparser -stats:off -i:csv -dtlines:0 -fixedsep:on -rtp:-1 "$lpquery"} else {$ScriptName = [System.IO.Path]::GetFileName($MyInvocation.ScriptName)"${ScriptName} requires logparser.exe in the path."}

@@ -1,1 +1,0 @@
-﻿Register-PSFConfigValidation -Name "sizestyle" -ScriptBlock {param ($Value)$Result = New-Object PSObject -Property @{Success = $TrueValue   = $nullMessage = ""}try { [PSFramework.Utility.SizeStyle]$style = $Value }catch {$Result.Message = "Not a size style: $Value"$Result.Success = $Falsereturn $Result}$Result.Value = $stylereturn $Result}

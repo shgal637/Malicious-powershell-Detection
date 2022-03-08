@@ -1,1 +1,0 @@
-﻿Update-TypeData -TypeName System.Diagnostics.Process -SerializationDepth 3 -ForceGet-Process

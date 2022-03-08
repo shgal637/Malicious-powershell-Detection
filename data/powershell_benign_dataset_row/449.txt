@@ -1,1 +1,0 @@
-﻿Register-PSFConfigValidation -Name "timespan" -ScriptBlock {Param ($Value)$Result = New-Object PSObject -Property @{Success = $TrueValue   = $nullMessage = ""}try { [timespan]$timespan = $Value }catch{$Result.Message = "Not a Timespan: $Value"$Result.Success = $Falsereturn $Result}$Result.Value = $timespanreturn $Result}

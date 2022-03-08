@@ -1,1 +1,0 @@
-﻿Register-PSFConfigValidation -Name "datetime" -ScriptBlock {Param ($Value)$Result = New-Object PSObject -Property @{Success = $TrueValue   = $nullMessage = ""}try { [DateTime]$DateTime = $Value }catch{$Result.Message = "Not a DateTime: $Value"$Result.Success = $Falsereturn $Result}$Result.Value = $DateTimereturn $Result}

@@ -1,1 +1,0 @@
-param([string]$first,[string]$second)Write-Host This is a sample script with parameters $first $secondWrite-Host "Second line with escaped characters"

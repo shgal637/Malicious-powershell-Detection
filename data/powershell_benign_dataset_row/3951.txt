@@ -1,1 +1,0 @@
-﻿function Test-GetAvailableAliasList{$location = Get-ProviderLocation ResourceManagementtry{$results = Get-AzAvailableServiceAlias -Location $location;Assert-NotNull $results;}finally{Clean-ResourceGroup $rgname}}

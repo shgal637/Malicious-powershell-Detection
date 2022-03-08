@@ -1,1 +1,0 @@
-$myEndpoint = "<your-endpoint-URL>"$myResourceGroup = "<resource-group-name>"$resourceGroupID = (New-AzResourceGroup -Name $myResourceGroup -Location westus2).ResourceIdNew-AzEventGridSubscription `-ResourceId $resourceGroupID `-Endpoint $myEndpoint `-EventSubscriptionName demoSubscriptionToResourceGroup

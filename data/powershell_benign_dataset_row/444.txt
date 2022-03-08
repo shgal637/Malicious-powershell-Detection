@@ -1,1 +1,0 @@
-﻿Register-PSFConfigValidation -Name "stringarray" -ScriptBlock {Param ($Value)$Result = New-Object PSObject -Property @{Success  = $TrueValue    = $nullMessage  = ""}try{$data = @()foreach ($item in $Value){$data += [string]$item}}catch{$Result.Message = "Not a string array: $Value"$Result.Success = $Falsereturn $Result}$Result.Value = $datareturn $Result}

@@ -1,1 +1,0 @@
-﻿Register-PSFConfigValidation -Name "integerarray" -ScriptBlock {param ($var)$test = $truetry { [int[]]$res = $var }catch { $test = $false }[pscustomobject]@{Success = $testValue   = $resMessage = "Casting $var as [int[]] failure. Input is being identified as $($var.GetType())"}}

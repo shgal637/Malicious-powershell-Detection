@@ -1,1 +1,0 @@
-﻿function Get-ImageInformation{PARAM ([System.String[]]$FilePath)Foreach ($Image in $FilePath){Add-type -AssemblyName System.DrawingNew-Object -TypeName System.Drawing.Bitmap -ArgumentList $Image}}

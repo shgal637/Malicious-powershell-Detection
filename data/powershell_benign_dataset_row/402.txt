@@ -1,1 +1,0 @@
-﻿Register-PSFSessionObjectType -DisplayName CimSession -TypeName Microsoft.Management.Infrastructure.CimSessionRegister-PSFSessionObjectType -DisplayName PSSession -TypeName System.Management.Automation.Runspaces.PSSessionRegister-PSFSessionObjectType -DisplayName SmoServer -TypeName Microsoft.SqlServer.Management.Smo.Server

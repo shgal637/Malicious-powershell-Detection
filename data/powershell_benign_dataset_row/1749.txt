@@ -1,1 +1,0 @@
-Import-Module DockerPull-ContainerImage hello-world Run-ContainerImage hello-world clsGet-Container | Where-Object State -eq "exited"Get-Container | Where-Object State -eq "exited" | Remove-ContainerRemove-ContainerImage hello-worldGet-ContainerImage

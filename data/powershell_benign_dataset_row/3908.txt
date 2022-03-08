@@ -1,1 +1,0 @@
-﻿function Test-GetLocationQuotas{$location = Get-BatchAccountProviderLocation$quotas = Get-AzBatchLocationQuotas $locationAssert-AreEqual $location $quotas.LocationAssert-True { $quotas.AccountQuota -gt 0 }}

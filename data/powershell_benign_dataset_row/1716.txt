@@ -1,1 +1,0 @@
-function Remove-ServiceNowAuth{If (-not (Test-ServiceNowAuthIsSet)) {Return $true}Try {Remove-Variable -Name ServiceNowURL -Scope Global -ErrorAction StopRemove-Variable -Name ServiceNowRESTURL -Scope Global -ErrorAction StopRemove-Variable -Name ServiceNowCredentials -Scope Global -ErrorAction Stop}Catch {Write-Error $_Return $false}Return $true}

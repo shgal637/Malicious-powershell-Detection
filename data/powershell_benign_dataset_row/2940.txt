@@ -1,1 +1,0 @@
-properties {$testMessage = 'Executed Test!'$compileMessage = 'Executed Compile!'$cleanMessage = 'Executed Clean!'}task default -depends Testtask Test -depends Compile, Clean { $testMessage}task Compile -depends Clean { $compileMessage}task Clean { $cleanMessage}

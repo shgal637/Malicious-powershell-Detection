@@ -1,1 +1,0 @@
-﻿Register-PSFConfigValidation -Name "double" -ScriptBlock {Param ($Value)$Result = New-Object PSOBject -Property @{Success = $TrueValue   = $nullMessage = ""}try { [double]$number = $Value }catch{$Result.Message = "Not a double: $Value"$Result.Success = $Falsereturn $Result}$Result.Value = $numberreturn $Result}

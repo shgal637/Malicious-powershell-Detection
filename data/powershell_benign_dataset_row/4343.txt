@@ -1,1 +1,0 @@
-function Get-ProviderName{[CmdletBinding()]Param([Parameter(Mandatory=$true)][PSCustomObject]$PSCustomObject)$providerName = $script:NuGetProviderNameif((Get-Member -InputObject $PSCustomObject -Name PackageManagementProvider)){$providerName = $PSCustomObject.PackageManagementProvider}return $providerName}
