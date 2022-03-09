@@ -6,7 +6,7 @@ import numpy as np
 import math
 import re
 
-from pandas import cut
+
 
 def  ShellCode_Detect(text):
     '''
