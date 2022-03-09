@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScriptBlockAst>
+  <Attributes />
+  <UsingStatements />
+  <NamedBlockAst>
+    <Statements>
+      <AssignmentStatementAst Operator="Equals">
+        <VariableExpressionAst VariablePath="ConsoleColorToAnsi" StaticType="System.Object" />
+        <CommandExpressionAst>
+          <ArrayExpressionAst StaticType="System.Object[]">
+            <StatementBlockAst>
+              <Statements>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">30</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">34</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">32</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">36</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">31</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">35</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">33</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">37</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">90</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">94</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">92</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">96</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">91</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">95</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">93</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ConstantExpressionAst StaticType="int">97</ConstantExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+              </Statements>
+            </StatementBlockAst>
+          </ArrayExpressionAst>
+          <Redirections />
+        </CommandExpressionAst>
+      </AssignmentStatementAst>
+      <AssignmentStatementAst Operator="Equals">
+        <VariableExpressionAst VariablePath="AnsiDefaultColor" StaticType="System.Object" />
+        <CommandExpressionAst>
+          <ConstantExpressionAst StaticType="int">39</ConstantExpressionAst>
+          <Redirections />
+        </CommandExpressionAst>
+      </AssignmentStatementAst>
+      <AssignmentStatementAst Operator="Equals">
+        <VariableExpressionAst VariablePath="AnsiEscape" StaticType="System.Object" />
+        <CommandExpressionAst>
+          <BinaryExpressionAst Operator="Plus" StaticType="System.Object">
+            <ConvertExpressionAst StaticType="char">
+              <TypeConstraintAst TypeName="char" />
+              <ConstantExpressionAst StaticType="int">27</ConstantExpressionAst>
+              <TypeConstraintAst TypeName="char" />
+            </ConvertExpressionAst>
+            <StringConstantExpressionAst StringConstantType="DoubleQuoted" StaticType="string">[</StringConstantExpressionAst>
+          </BinaryExpressionAst>
+          <Redirections />
+        </CommandExpressionAst>
+      </AssignmentStatementAst>
+      <PipelineAst>
+        <PipelineElements>
+          <CommandExpressionAst>
+            <InvokeMemberExpressionAst Static="True" StaticType="System.Object">
+              <Arguments>
+                <StringConstantExpressionAst StringConstantType="SingleQuoted" StaticType="string">System.Drawing</StringConstantExpressionAst>
+              </Arguments>
+              <TypeExpressionAst TypeName="Reflection.Assembly" StaticType="type" />
+              <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">LoadWithPartialName</StringConstantExpressionAst>
+            </InvokeMemberExpressionAst>
+            <Redirections>
+              <FileRedirectionAst>
+                <VariableExpressionAst VariablePath="null" StaticType="System.Object" />
+              </FileRedirectionAst>
+            </Redirections>
+          </CommandExpressionAst>
+        </PipelineElements>
+      </PipelineAst>
+      <AssignmentStatementAst Operator="Equals">
+        <VariableExpressionAst VariablePath="ColorTranslatorType" StaticType="System.Object" />
+        <CommandExpressionAst>
+          <BinaryExpressionAst Operator="As" StaticType="System.Object">
+            <StringConstantExpressionAst StringConstantType="SingleQuoted" StaticType="string">System.Drawing.ColorTranslator</StringConstantExpressionAst>
+            <TypeExpressionAst TypeName="Type" StaticType="type" />
+          </BinaryExpressionAst>
+          <Redirections />
+        </CommandExpressionAst>
+      </AssignmentStatementAst>
+      <AssignmentStatementAst Operator="Equals">
+        <VariableExpressionAst VariablePath="ColorType" StaticType="System.Object" />
+        <CommandExpressionAst>
+          <BinaryExpressionAst Operator="As" StaticType="System.Object">
+            <StringConstantExpressionAst StringConstantType="SingleQuoted" StaticType="string">System.Drawing.Color</StringConstantExpressionAst>
+            <TypeExpressionAst TypeName="Type" StaticType="type" />
+          </BinaryExpressionAst>
+          <Redirections />
+        </CommandExpressionAst>
+      </AssignmentStatementAst>
+      <FunctionDefinitionAst Name="EscapeAnsiString">
+        <Parameters>
+          <ParameterAst Name="$AnsiString" StaticType="string">
+            <Attributes>
+              <TypeConstraintAst TypeName="string" />
+            </Attributes>
+            <VariableExpressionAst VariablePath="AnsiString" StaticType="System.Object" />
+          </ParameterAst>
+        </Parameters>
+        <ScriptBlockAst>
+          <Attributes />
+          <UsingStatements />
+          <NamedBlockAst>
+            <Statements>
+              <IfStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <BinaryExpressionAst Operator="Ige" StaticType="System.Object">
+                        <MemberExpressionAst Static="False" StaticType="System.Object">
+                          <MemberExpressionAst Static="False" StaticType="System.Object">
+                            <VariableExpressionAst VariablePath="PSVersionTable" StaticType="System.Object" />
+                            <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">PSVersion</StringConstantExpressionAst>
+                          </MemberExpressionAst>
+                          <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Major</StringConstantExpressionAst>
+                        </MemberExpressionAst>
+                        <ConstantExpressionAst StaticType="int">6</ConstantExpressionAst>
+                      </BinaryExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <AssignmentStatementAst Operator="Equals">
+                      <VariableExpressionAst VariablePath="res" StaticType="System.Object" />
+                      <CommandExpressionAst>
+                        <BinaryExpressionAst Operator="Ireplace" StaticType="System.Object">
+                          <VariableExpressionAst VariablePath="AnsiString" StaticType="System.Object" />
+                          <ArrayLiteralAst StaticType="System.Object[]">
+                            <Elements>
+                              <ExpandableStringExpressionAst StringConstantType="DoubleQuoted" StaticType="string">$([char]27)<NestedExpressions><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><ConvertExpressionAst StaticType="char"><TypeConstraintAst TypeName="char" /><ConstantExpressionAst StaticType="int">27</ConstantExpressionAst><TypeConstraintAst TypeName="char" /></ConvertExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst></NestedExpressions></ExpandableStringExpressionAst>
+                              <StringConstantExpressionAst StringConstantType="SingleQuoted" StaticType="string">`e</StringConstantExpressionAst>
+                            </Elements>
+                          </ArrayLiteralAst>
+                        </BinaryExpressionAst>
+                        <Redirections />
+                      </CommandExpressionAst>
+                    </AssignmentStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <AssignmentStatementAst Operator="Equals">
+                      <VariableExpressionAst VariablePath="res" StaticType="System.Object" />
+                      <CommandExpressionAst>
+                        <BinaryExpressionAst Operator="Ireplace" StaticType="System.Object">
+                          <VariableExpressionAst VariablePath="AnsiString" StaticType="System.Object" />
+                          <ArrayLiteralAst StaticType="System.Object[]">
+                            <Elements>
+                              <ExpandableStringExpressionAst StringConstantType="DoubleQuoted" StaticType="string">$([char]27)<NestedExpressions><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><ConvertExpressionAst StaticType="char"><TypeConstraintAst TypeName="char" /><ConstantExpressionAst StaticType="int">27</ConstantExpressionAst><TypeConstraintAst TypeName="char" /></ConvertExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst></NestedExpressions></ExpandableStringExpressionAst>
+                              <StringConstantExpressionAst StringConstantType="SingleQuoted" StaticType="string">$([char]27)</StringConstantExpressionAst>
+                            </Elements>
+                          </ArrayLiteralAst>
+                        </BinaryExpressionAst>
+                        <Redirections />
+                      </CommandExpressionAst>
+                    </AssignmentStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+              </IfStatementAst>
+              <PipelineAst>
+                <PipelineElements>
+                  <CommandExpressionAst>
+                    <VariableExpressionAst VariablePath="res" StaticType="System.Object" />
+                    <Redirections />
+                  </CommandExpressionAst>
+                </PipelineElements>
+              </PipelineAst>
+            </Statements>
+          </NamedBlockAst>
+        </ScriptBlockAst>
+      </FunctionDefinitionAst>
+      <FunctionDefinitionAst Name="Test-VirtualTerminalSequece">
+        <Parameters>
+          <ParameterAst Name="$Object" StaticType="psobject[]">
+            <Attributes>
+              <TypeConstraintAst TypeName="psobject[]" />
+            </Attributes>
+            <VariableExpressionAst VariablePath="Object" StaticType="System.Object" />
+          </ParameterAst>
+          <ParameterAst Name="$Force" StaticType="switch">
+            <Attributes>
+              <TypeConstraintAst TypeName="switch" />
+            </Attributes>
+            <VariableExpressionAst VariablePath="Force" StaticType="System.Object" />
+          </ParameterAst>
+        </Parameters>
+        <ScriptBlockAst>
+          <Attributes />
+          <UsingStatements />
+          <NamedBlockAst>
+            <Statements>
+              <ForEachStatementAst Variable="$obj" Condition="$Object">
+                <VariableExpressionAst VariablePath="obj" StaticType="System.Object" />
+                <StatementBlockAst>
+                  <Statements>
+                    <IfStatementAst>
+                      <PipelineAst>
+                        <PipelineElements>
+                          <CommandExpressionAst>
+                            <BinaryExpressionAst Operator="And" StaticType="bool">
+                              <ParenExpressionAst StaticType="System.Object">
+                                <PipelineAst>
+                                  <PipelineElements>
+                                    <CommandExpressionAst>
+                                      <BinaryExpressionAst Operator="Or" StaticType="bool">
+                                        <VariableExpressionAst VariablePath="Force" StaticType="System.Object" />
+                                        <MemberExpressionAst Static="False" StaticType="System.Object">
+                                          <VariableExpressionAst VariablePath="global:GitPromptSettings" StaticType="System.Object" />
+                                          <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">AnsiConsole</StringConstantExpressionAst>
+                                        </MemberExpressionAst>
+                                      </BinaryExpressionAst>
+                                      <Redirections />
+                                    </CommandExpressionAst>
+                                  </PipelineElements>
+                                </PipelineAst>
+                              </ParenExpressionAst>
+                              <ParenExpressionAst StaticType="System.Object">
+                                <PipelineAst>
+                                  <PipelineElements>
+                                    <CommandExpressionAst>
+                                      <BinaryExpressionAst Operator="Is" StaticType="bool">
+                                        <VariableExpressionAst VariablePath="obj" StaticType="System.Object" />
+                                        <TypeExpressionAst TypeName="string" StaticType="type" />
+                                      </BinaryExpressionAst>
+                                      <Redirections />
+                                    </CommandExpressionAst>
+                                  </PipelineElements>
+                                </PipelineAst>
+                              </ParenExpressionAst>
+                            </BinaryExpressionAst>
+                            <Redirections />
+                          </CommandExpressionAst>
+                        </PipelineElements>
+                      </PipelineAst>
+                      <StatementBlockAst>
+                        <Statements>
+                          <PipelineAst>
+                            <PipelineElements>
+                              <CommandExpressionAst>
+                                <InvokeMemberExpressionAst Static="False" StaticType="System.Object">
+                                  <Arguments>
+                                    <VariableExpressionAst VariablePath="AnsiEscape" StaticType="System.Object" />
+                                  </Arguments>
+                                  <VariableExpressionAst VariablePath="obj" StaticType="System.Object" />
+                                  <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Contains</StringConstantExpressionAst>
+                                </InvokeMemberExpressionAst>
+                                <Redirections />
+                              </CommandExpressionAst>
+                            </PipelineElements>
+                          </PipelineAst>
+                        </Statements>
+                      </StatementBlockAst>
+                      <StatementBlockAst>
+                        <Statements>
+                          <PipelineAst>
+                            <PipelineElements>
+                              <CommandExpressionAst>
+                                <VariableExpressionAst VariablePath="false" StaticType="System.Object" />
+                                <Redirections />
+                              </CommandExpressionAst>
+                            </PipelineElements>
+                          </PipelineAst>
+                        </Statements>
+                      </StatementBlockAst>
+                    </IfStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <VariableExpressionAst VariablePath="Object" StaticType="System.Object" />
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+              </ForEachStatementAst>
+            </Statements>
+          </NamedBlockAst>
+        </ScriptBlockAst>
+      </FunctionDefinitionAst>
+      <FunctionDefinitionAst Name="Get-VirtualTerminalSequence">
+        <Parameters>
+          <ParameterAst Name="$color" StaticType="System.Object">
+            <Attributes />
+            <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+          </ParameterAst>
+          <ParameterAst Name="$offset" StaticType="int">
+            <Attributes>
+              <TypeConstraintAst TypeName="int" />
+            </Attributes>
+            <VariableExpressionAst VariablePath="offset" StaticType="System.Object" />
+            <ConstantExpressionAst StaticType="int">0</ConstantExpressionAst>
+          </ParameterAst>
+        </Parameters>
+        <ScriptBlockAst>
+          <Attributes />
+          <UsingStatements />
+          <NamedBlockAst>
+            <Statements>
+              <IfStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <BinaryExpressionAst Operator="Ieq" StaticType="System.Object">
+                        <VariableExpressionAst VariablePath="null" StaticType="System.Object" />
+                        <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                      </BinaryExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <ReturnStatementAst>
+                      <PipelineAst>
+                        <PipelineElements>
+                          <CommandExpressionAst>
+                            <VariableExpressionAst VariablePath="null" StaticType="System.Object" />
+                            <Redirections />
+                          </CommandExpressionAst>
+                        </PipelineElements>
+                      </PipelineAst>
+                    </ReturnStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+              </IfStatementAst>
+              <IfStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <BinaryExpressionAst Operator="Is" StaticType="bool">
+                        <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                        <TypeExpressionAst TypeName="byte" StaticType="type" />
+                      </BinaryExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <ReturnStatementAst>
+                      <PipelineAst>
+                        <PipelineElements>
+                          <CommandExpressionAst>
+                            <ExpandableStringExpressionAst StringConstantType="DoubleQuoted" StaticType="string">${AnsiEscape}$(38 + $offset);5;${color}m<NestedExpressions><VariableExpressionAst VariablePath="AnsiEscape" StaticType="System.Object" /><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><BinaryExpressionAst Operator="Plus" StaticType="System.Object"><ConstantExpressionAst StaticType="int">38</ConstantExpressionAst><VariableExpressionAst VariablePath="offset" StaticType="System.Object" /></BinaryExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst><VariableExpressionAst VariablePath="color" StaticType="System.Object" /></NestedExpressions></ExpandableStringExpressionAst>
+                            <Redirections />
+                          </CommandExpressionAst>
+                        </PipelineElements>
+                      </PipelineAst>
+                    </ReturnStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+              </IfStatementAst>
+              <IfStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <BinaryExpressionAst Operator="Is" StaticType="bool">
+                        <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                        <TypeExpressionAst TypeName="int" StaticType="type" />
+                      </BinaryExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <AssignmentStatementAst Operator="Equals">
+                      <VariableExpressionAst VariablePath="r" StaticType="System.Object" />
+                      <CommandExpressionAst>
+                        <BinaryExpressionAst Operator="Band" StaticType="System.Object">
+                          <ParenExpressionAst StaticType="System.Object">
+                            <PipelineAst>
+                              <PipelineElements>
+                                <CommandExpressionAst>
+                                  <BinaryExpressionAst Operator="Shr" StaticType="System.Object">
+                                    <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                    <ConstantExpressionAst StaticType="int">16</ConstantExpressionAst>
+                                  </BinaryExpressionAst>
+                                  <Redirections />
+                                </CommandExpressionAst>
+                              </PipelineElements>
+                            </PipelineAst>
+                          </ParenExpressionAst>
+                          <ConstantExpressionAst StaticType="int">255</ConstantExpressionAst>
+                        </BinaryExpressionAst>
+                        <Redirections />
+                      </CommandExpressionAst>
+                    </AssignmentStatementAst>
+                    <AssignmentStatementAst Operator="Equals">
+                      <VariableExpressionAst VariablePath="g" StaticType="System.Object" />
+                      <CommandExpressionAst>
+                        <BinaryExpressionAst Operator="Band" StaticType="System.Object">
+                          <ParenExpressionAst StaticType="System.Object">
+                            <PipelineAst>
+                              <PipelineElements>
+                                <CommandExpressionAst>
+                                  <BinaryExpressionAst Operator="Shr" StaticType="System.Object">
+                                    <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                    <ConstantExpressionAst StaticType="int">8</ConstantExpressionAst>
+                                  </BinaryExpressionAst>
+                                  <Redirections />
+                                </CommandExpressionAst>
+                              </PipelineElements>
+                            </PipelineAst>
+                          </ParenExpressionAst>
+                          <ConstantExpressionAst StaticType="int">255</ConstantExpressionAst>
+                        </BinaryExpressionAst>
+                        <Redirections />
+                      </CommandExpressionAst>
+                    </AssignmentStatementAst>
+                    <AssignmentStatementAst Operator="Equals">
+                      <VariableExpressionAst VariablePath="b" StaticType="System.Object" />
+                      <CommandExpressionAst>
+                        <BinaryExpressionAst Operator="Band" StaticType="System.Object">
+                          <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                          <ConstantExpressionAst StaticType="int">255</ConstantExpressionAst>
+                        </BinaryExpressionAst>
+                        <Redirections />
+                      </CommandExpressionAst>
+                    </AssignmentStatementAst>
+                    <ReturnStatementAst>
+                      <PipelineAst>
+                        <PipelineElements>
+                          <CommandExpressionAst>
+                            <ExpandableStringExpressionAst StringConstantType="DoubleQuoted" StaticType="string">${AnsiEscape}$(38 + $offset);2;${r};${g};${b}m<NestedExpressions><VariableExpressionAst VariablePath="AnsiEscape" StaticType="System.Object" /><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><BinaryExpressionAst Operator="Plus" StaticType="System.Object"><ConstantExpressionAst StaticType="int">38</ConstantExpressionAst><VariableExpressionAst VariablePath="offset" StaticType="System.Object" /></BinaryExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst><VariableExpressionAst VariablePath="r" StaticType="System.Object" /><VariableExpressionAst VariablePath="g" StaticType="System.Object" /><VariableExpressionAst VariablePath="b" StaticType="System.Object" /></NestedExpressions></ExpandableStringExpressionAst>
+                            <Redirections />
+                          </CommandExpressionAst>
+                        </PipelineElements>
+                      </PipelineAst>
+                    </ReturnStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+              </IfStatementAst>
+              <IfStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <BinaryExpressionAst Operator="Is" StaticType="bool">
+                        <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                        <TypeExpressionAst TypeName="String" StaticType="type" />
+                      </BinaryExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <TryStatementAst>
+                      <StatementBlockAst>
+                        <Statements>
+                          <IfStatementAst>
+                            <PipelineAst>
+                              <PipelineElements>
+                                <CommandExpressionAst>
+                                  <VariableExpressionAst VariablePath="ColorTranslatorType" StaticType="System.Object" />
+                                  <Redirections />
+                                </CommandExpressionAst>
+                              </PipelineElements>
+                            </PipelineAst>
+                            <StatementBlockAst>
+                              <Statements>
+                                <AssignmentStatementAst Operator="Equals">
+                                  <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                  <CommandExpressionAst>
+                                    <InvokeMemberExpressionAst Static="True" StaticType="System.Object">
+                                      <Arguments>
+                                        <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                      </Arguments>
+                                      <VariableExpressionAst VariablePath="ColorTranslatorType" StaticType="System.Object" />
+                                      <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">FromHtml</StringConstantExpressionAst>
+                                    </InvokeMemberExpressionAst>
+                                    <Redirections />
+                                  </CommandExpressionAst>
+                                </AssignmentStatementAst>
+                              </Statements>
+                            </StatementBlockAst>
+                          </IfStatementAst>
+                        </Statements>
+                      </StatementBlockAst>
+                      <CatchClauses>
+                        <CatchClauseAst>
+                          <CatchTypes />
+                          <StatementBlockAst>
+                            <Statements>
+                              <PipelineAst>
+                                <PipelineElements>
+                                  <CommandAst>
+                                    <CommandElements>
+                                      <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Write-Debug</StringConstantExpressionAst>
+                                      <VariableExpressionAst VariablePath="_" StaticType="System.Object" />
+                                    </CommandElements>
+                                    <Redirections />
+                                  </CommandAst>
+                                </PipelineElements>
+                              </PipelineAst>
+                            </Statements>
+                          </StatementBlockAst>
+                        </CatchClauseAst>
+                      </CatchClauses>
+                    </TryStatementAst>
+                    <IfStatementAst>
+                      <PipelineAst>
+                        <PipelineElements>
+                          <CommandExpressionAst>
+                            <BinaryExpressionAst Operator="And" StaticType="bool">
+                              <ParenExpressionAst StaticType="System.Object">
+                                <PipelineAst>
+                                  <PipelineElements>
+                                    <CommandExpressionAst>
+                                      <BinaryExpressionAst Operator="IsNot" StaticType="System.Object">
+                                        <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                        <VariableExpressionAst VariablePath="ColorType" StaticType="System.Object" />
+                                      </BinaryExpressionAst>
+                                      <Redirections />
+                                    </CommandExpressionAst>
+                                  </PipelineElements>
+                                </PipelineAst>
+                              </ParenExpressionAst>
+                              <ParenExpressionAst StaticType="System.Object">
+                                <PipelineAst>
+                                  <PipelineElements>
+                                    <CommandExpressionAst>
+                                      <BinaryExpressionAst Operator="Ine" StaticType="System.Object">
+                                        <VariableExpressionAst VariablePath="null" StaticType="System.Object" />
+                                        <ParenExpressionAst StaticType="System.Object">
+                                          <AssignmentStatementAst Operator="Equals">
+                                            <VariableExpressionAst VariablePath="consoleColor" StaticType="System.Object" />
+                                            <CommandExpressionAst>
+                                              <BinaryExpressionAst Operator="As" StaticType="System.Object">
+                                                <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                                <TypeExpressionAst TypeName="System.ConsoleColor" StaticType="type" />
+                                              </BinaryExpressionAst>
+                                              <Redirections />
+                                            </CommandExpressionAst>
+                                          </AssignmentStatementAst>
+                                        </ParenExpressionAst>
+                                      </BinaryExpressionAst>
+                                      <Redirections />
+                                    </CommandExpressionAst>
+                                  </PipelineElements>
+                                </PipelineAst>
+                              </ParenExpressionAst>
+                            </BinaryExpressionAst>
+                            <Redirections />
+                          </CommandExpressionAst>
+                        </PipelineElements>
+                      </PipelineAst>
+                      <StatementBlockAst>
+                        <Statements>
+                          <AssignmentStatementAst Operator="Equals">
+                            <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                            <CommandExpressionAst>
+                              <VariableExpressionAst VariablePath="consoleColor" StaticType="System.Object" />
+                              <Redirections />
+                            </CommandExpressionAst>
+                          </AssignmentStatementAst>
+                        </Statements>
+                      </StatementBlockAst>
+                    </IfStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+              </IfStatementAst>
+              <IfStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <BinaryExpressionAst Operator="And" StaticType="bool">
+                        <VariableExpressionAst VariablePath="ColorType" StaticType="System.Object" />
+                        <ParenExpressionAst StaticType="System.Object">
+                          <PipelineAst>
+                            <PipelineElements>
+                              <CommandExpressionAst>
+                                <BinaryExpressionAst Operator="Is" StaticType="bool">
+                                  <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                  <VariableExpressionAst VariablePath="ColorType" StaticType="System.Object" />
+                                </BinaryExpressionAst>
+                                <Redirections />
+                              </CommandExpressionAst>
+                            </PipelineElements>
+                          </PipelineAst>
+                        </ParenExpressionAst>
+                      </BinaryExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <ReturnStatementAst>
+                      <PipelineAst>
+                        <PipelineElements>
+                          <CommandExpressionAst>
+                            <ExpandableStringExpressionAst StringConstantType="DoubleQuoted" StaticType="string">${AnsiEscape}$(38 + $offset);2;$($color.R);$($color.G);$($color.B)m<NestedExpressions><VariableExpressionAst VariablePath="AnsiEscape" StaticType="System.Object" /><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><BinaryExpressionAst Operator="Plus" StaticType="System.Object"><ConstantExpressionAst StaticType="int">38</ConstantExpressionAst><VariableExpressionAst VariablePath="offset" StaticType="System.Object" /></BinaryExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><MemberExpressionAst Static="False" StaticType="System.Object"><VariableExpressionAst VariablePath="color" StaticType="System.Object" /><StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">R</StringConstantExpressionAst></MemberExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><MemberExpressionAst Static="False" StaticType="System.Object"><VariableExpressionAst VariablePath="color" StaticType="System.Object" /><StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">G</StringConstantExpressionAst></MemberExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><MemberExpressionAst Static="False" StaticType="System.Object"><VariableExpressionAst VariablePath="color" StaticType="System.Object" /><StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">B</StringConstantExpressionAst></MemberExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst></NestedExpressions></ExpandableStringExpressionAst>
+                            <Redirections />
+                          </CommandExpressionAst>
+                        </PipelineElements>
+                      </PipelineAst>
+                    </ReturnStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+              </IfStatementAst>
+              <IfStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <BinaryExpressionAst Operator="And" StaticType="bool">
+                        <BinaryExpressionAst Operator="And" StaticType="bool">
+                          <ParenExpressionAst StaticType="System.Object">
+                            <PipelineAst>
+                              <PipelineElements>
+                                <CommandExpressionAst>
+                                  <BinaryExpressionAst Operator="Is" StaticType="bool">
+                                    <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                    <TypeExpressionAst TypeName="System.ConsoleColor" StaticType="type" />
+                                  </BinaryExpressionAst>
+                                  <Redirections />
+                                </CommandExpressionAst>
+                              </PipelineElements>
+                            </PipelineAst>
+                          </ParenExpressionAst>
+                          <ParenExpressionAst StaticType="System.Object">
+                            <PipelineAst>
+                              <PipelineElements>
+                                <CommandExpressionAst>
+                                  <BinaryExpressionAst Operator="Ige" StaticType="System.Object">
+                                    <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                    <ConstantExpressionAst StaticType="int">0</ConstantExpressionAst>
+                                  </BinaryExpressionAst>
+                                  <Redirections />
+                                </CommandExpressionAst>
+                              </PipelineElements>
+                            </PipelineAst>
+                          </ParenExpressionAst>
+                        </BinaryExpressionAst>
+                        <ParenExpressionAst StaticType="System.Object">
+                          <PipelineAst>
+                            <PipelineElements>
+                              <CommandExpressionAst>
+                                <BinaryExpressionAst Operator="Ile" StaticType="System.Object">
+                                  <VariableExpressionAst VariablePath="color" StaticType="System.Object" />
+                                  <ConstantExpressionAst StaticType="int">15</ConstantExpressionAst>
+                                </BinaryExpressionAst>
+                                <Redirections />
+                              </CommandExpressionAst>
+                            </PipelineElements>
+                          </PipelineAst>
+                        </ParenExpressionAst>
+                      </BinaryExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+                <StatementBlockAst>
+                  <Statements>
+                    <ReturnStatementAst>
+                      <PipelineAst>
+                        <PipelineElements>
+                          <CommandExpressionAst>
+                            <ExpandableStringExpressionAst StringConstantType="DoubleQuoted" StaticType="string">${AnsiEscape}$($ConsoleColorToAnsi[$color] + $offset)m<NestedExpressions><VariableExpressionAst VariablePath="AnsiEscape" StaticType="System.Object" /><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><BinaryExpressionAst Operator="Plus" StaticType="System.Object"><IndexExpressionAst StaticType="System.Object"><VariableExpressionAst VariablePath="ConsoleColorToAnsi" StaticType="System.Object" /><VariableExpressionAst VariablePath="color" StaticType="System.Object" /></IndexExpressionAst><VariableExpressionAst VariablePath="offset" StaticType="System.Object" /></BinaryExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst></NestedExpressions></ExpandableStringExpressionAst>
+                            <Redirections />
+                          </CommandExpressionAst>
+                        </PipelineElements>
+                      </PipelineAst>
+                    </ReturnStatementAst>
+                  </Statements>
+                </StatementBlockAst>
+              </IfStatementAst>
+              <ReturnStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandExpressionAst>
+                      <ExpandableStringExpressionAst StringConstantType="DoubleQuoted" StaticType="string">${AnsiEscape}$($AnsiDefaultColor + $offset)m<NestedExpressions><VariableExpressionAst VariablePath="AnsiEscape" StaticType="System.Object" /><SubExpressionAst StaticType="System.Object"><StatementBlockAst><Statements><PipelineAst><PipelineElements><CommandExpressionAst><BinaryExpressionAst Operator="Plus" StaticType="System.Object"><VariableExpressionAst VariablePath="AnsiDefaultColor" StaticType="System.Object" /><VariableExpressionAst VariablePath="offset" StaticType="System.Object" /></BinaryExpressionAst><Redirections /></CommandExpressionAst></PipelineElements></PipelineAst></Statements></StatementBlockAst></SubExpressionAst></NestedExpressions></ExpandableStringExpressionAst>
+                      <Redirections />
+                    </CommandExpressionAst>
+                  </PipelineElements>
+                </PipelineAst>
+              </ReturnStatementAst>
+            </Statements>
+          </NamedBlockAst>
+        </ScriptBlockAst>
+      </FunctionDefinitionAst>
+      <FunctionDefinitionAst Name="Get-ForegroundVirtualTerminalSequence">
+        <Parameters>
+          <ParameterAst Name="$Color" StaticType="System.Object">
+            <Attributes />
+            <VariableExpressionAst VariablePath="Color" StaticType="System.Object" />
+          </ParameterAst>
+        </Parameters>
+        <ScriptBlockAst>
+          <Attributes />
+          <UsingStatements />
+          <NamedBlockAst>
+            <Statements>
+              <ReturnStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandAst>
+                      <CommandElements>
+                        <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Get-VirtualTerminalSequence</StringConstantExpressionAst>
+                        <VariableExpressionAst VariablePath="Color" StaticType="System.Object" />
+                      </CommandElements>
+                      <Redirections />
+                    </CommandAst>
+                  </PipelineElements>
+                </PipelineAst>
+              </ReturnStatementAst>
+            </Statements>
+          </NamedBlockAst>
+        </ScriptBlockAst>
+      </FunctionDefinitionAst>
+      <FunctionDefinitionAst Name="Get-BackgroundVirtualTerminalSequence">
+        <Parameters>
+          <ParameterAst Name="$Color" StaticType="System.Object">
+            <Attributes />
+            <VariableExpressionAst VariablePath="Color" StaticType="System.Object" />
+          </ParameterAst>
+        </Parameters>
+        <ScriptBlockAst>
+          <Attributes />
+          <UsingStatements />
+          <NamedBlockAst>
+            <Statements>
+              <ReturnStatementAst>
+                <PipelineAst>
+                  <PipelineElements>
+                    <CommandAst>
+                      <CommandElements>
+                        <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Get-VirtualTerminalSequence</StringConstantExpressionAst>
+                        <VariableExpressionAst VariablePath="Color" StaticType="System.Object" />
+                        <ConstantExpressionAst StaticType="int">10</ConstantExpressionAst>
+                      </CommandElements>
+                      <Redirections />
+                    </CommandAst>
+                  </PipelineElements>
+                </PipelineAst>
+              </ReturnStatementAst>
+            </Statements>
+          </NamedBlockAst>
+        </ScriptBlockAst>
+      </FunctionDefinitionAst>
+    </Statements>
+  </NamedBlockAst>
+</ScriptBlockAst>

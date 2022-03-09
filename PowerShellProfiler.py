@@ -1702,7 +1702,7 @@ def unravelContent(originalData):
     return contentData
 
 
-def main(text, debug):
+def Scores(path, debug):
     # parser = argparse.ArgumentParser(description="PowerShellProfiler analyzes PowerShell scripts statically to identify and score behaviors.")
     # parser.add_argument("-f", "--file", help="PowerShell Script to behaviorally profile", metavar="<file_name>", required=True)
     # parser.add_argument("-d", "--debug", help="Enables debug output", action="store_true")
@@ -1725,7 +1725,8 @@ def main(text, debug):
     #     originalData = fh.read()
     # if debugFlag:
     #     print("Opened File %s" % (args.file))
-    originalData = text
+    with open(path, mode='r',encoding='utf8', errors='ignore') as fh:
+        originalData = fh.read()
     if debugFlag:
         print("Get content" )
 
@@ -1764,6 +1765,3 @@ def main(text, debug):
         print(alternativeData)
     return 0
 
-
-if __name__ == '__main__':
-    main()

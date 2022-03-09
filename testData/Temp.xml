@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScriptBlockAst>
+  <Attributes />
+  <UsingStatements />
+  <NamedBlockAst>
+    <Statements>
+      <IfStatementAst>
+        <PipelineAst>
+          <PipelineElements>
+            <CommandExpressionAst>
+              <UnaryExpressionAst TokenKind="Not" StaticType="bool">
+                <ParenExpressionAst StaticType="System.Object">
+                  <PipelineAst>
+                    <PipelineElements>
+                      <CommandAst>
+                        <CommandElements>
+                          <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Test-Path</StringConstantExpressionAst>
+                          <MemberExpressionAst Static="False" StaticType="System.Object">
+                            <VariableExpressionAst VariablePath="Profile" StaticType="System.Object" />
+                            <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">AllUsersAllHosts</StringConstantExpressionAst>
+                          </MemberExpressionAst>
+                        </CommandElements>
+                        <Redirections />
+                      </CommandAst>
+                    </PipelineElements>
+                  </PipelineAst>
+                </ParenExpressionAst>
+              </UnaryExpressionAst>
+              <Redirections />
+            </CommandExpressionAst>
+          </PipelineElements>
+        </PipelineAst>
+        <StatementBlockAst>
+          <Statements>
+            <PipelineAst>
+              <PipelineElements>
+                <CommandAst>
+                  <CommandElements>
+                    <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">New-Item</StringConstantExpressionAst>
+                    <CommandParameterAst ParameterName="Type" />
+                    <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">File</StringConstantExpressionAst>
+                    <MemberExpressionAst Static="False" StaticType="System.Object">
+                      <VariableExpressionAst VariablePath="Profile" StaticType="System.Object" />
+                      <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">AllUsersAllHosts</StringConstantExpressionAst>
+                    </MemberExpressionAst>
+                  </CommandElements>
+                  <Redirections />
+                </CommandAst>
+              </PipelineElements>
+            </PipelineAst>
+          </Statements>
+        </StatementBlockAst>
+      </IfStatementAst>
+      <PipelineAst>
+        <PipelineElements>
+          <CommandAst>
+            <CommandElements>
+              <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Set-ExecutionPolicy</StringConstantExpressionAst>
+              <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Unrestricted</StringConstantExpressionAst>
+            </CommandElements>
+            <Redirections />
+          </CommandAst>
+        </PipelineElements>
+      </PipelineAst>
+      <AssignmentStatementAst Operator="Equals">
+        <VariableExpressionAst VariablePath="pstext" StaticType="System.Object" />
+        <CommandExpressionAst>
+          <StringConstantExpressionAst StringConstantType="SingleQuoted" StaticType="string">Write-Host "Invoke-Expression has been hooked. pid=$pid"
+$logdir="C:\Users\ASUS\Documents\log\"
+$logfile="C:\Users\ASUS\Documents\log\logfile.$pid.txt"
+New-Item -Type File -force $logfile | Out-null
+"Time: $(Get-Date -format 'yyyy-MM-dd HH:mm:ss')" | Out-File $logfile -Append 
+"Current Process: $((Get-Process -pid $pid).Path)" | Out-File $logfile -Append
+"Current Process ID: $pid" | Out-File $logfile -Append 
+function Invoke-Expression{$arg=($args -join ' ');"========`n$arg" | Out-File -Append $logfile;Microsoft.PowerShell.Utility\Invoke-Expression $arg;}</StringConstantExpressionAst>
+          <Redirections />
+        </CommandExpressionAst>
+      </AssignmentStatementAst>
+      <PipelineAst>
+        <PipelineElements>
+          <CommandExpressionAst>
+            <VariableExpressionAst VariablePath="pstext" StaticType="System.Object" />
+            <Redirections />
+          </CommandExpressionAst>
+          <CommandAst>
+            <CommandElements>
+              <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">Out-File</StringConstantExpressionAst>
+              <MemberExpressionAst Static="False" StaticType="System.Object">
+                <VariableExpressionAst VariablePath="Profile" StaticType="System.Object" />
+                <StringConstantExpressionAst StringConstantType="BareWord" StaticType="string">AllUsersAllHosts</StringConstantExpressionAst>
+              </MemberExpressionAst>
+              <CommandParameterAst ParameterName="Append" />
+            </CommandElements>
+            <Redirections />
+          </CommandAst>
+        </PipelineElements>
+      </PipelineAst>
+    </Statements>
+  </NamedBlockAst>
+</ScriptBlockAst>

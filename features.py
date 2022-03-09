@@ -2,9 +2,11 @@
 # 开发人员 : DELL
 # 开发时间 : 2022/3/8 16:00
 # 文件名称 : features.py
-import numpy as np
 import re
-
+import subprocess
+import os
+from AstNodes import *
+from config import *
 def  ShellCode_Detect(text):
     '''
     detect the presence of shellcode
@@ -59,11 +61,34 @@ def Special_variable_names(text):
     return 0
 
 
-def AST(text):
+def AST(path,astfile):
     '''
     extract the proportion of these 23 nodes in the abstract syntax tree、the depth of the abstract syntax tree as features
     抽取23类节点的比例、AST的设定作为特征
-    :param text:
-    :return:features
+    :param path: the path of ps1
+    :param astfile: the path of xml, AST
+    :return:proportion, list[23]
     '''
-    return 0
+    proportion = []
+    # use the Get-AST.ps1 to process the scripts
+    psxmlgen = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
+                                 r'.\Get-AST.ps1', path, astfile], cwd=os.getcwd())
+    result = psxmlgen.wait()
+    # use xml to calculate the features
+    Nodes = getXmlData(astfile)
+    NodeCount = {}
+    Count = 0
+    for type in NodeType:
+        NodeCount[type] = 0
+    # count nodes
+    for node in Nodes:
+        if node[2] in NodeType:
+            NodeCount[node[2]] += 1
+            Count += 1
+    # the proportion
+    for type in NodeCount.keys():
+        NodeCount[type] /= Count
+    # return the value
+    for type in NodeCount.keys():
+        proportion.append(NodeCount[type])
+    return proportion
