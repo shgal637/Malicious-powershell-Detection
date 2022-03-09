@@ -3,6 +3,7 @@
 # 开发时间 : 2022/3/8 16:00
 # 文件名称 : features.py
 import numpy as np
+import re
 
 def  ShellCode_Detect(text):
     '''
@@ -39,7 +40,13 @@ def URL_IP(text):
     :param text:
     :return:presence is 1, else 0
     '''
-    return 0
+    url = re.findall(r"https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+", text)
+    compile_rule = re.compile(r'\d+[\.]\d+[\.]\d+[\.]\d+')
+    ip = re.findall(compile_rule, text)
+    if url or ip:
+        return 1
+    else:
+        return 0
 
 
 def Special_variable_names(text):
@@ -60,5 +67,3 @@ def AST(text):
     :return:features
     '''
     return 0
-
-

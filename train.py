@@ -3,71 +3,19 @@
 # 开发时间 : 2022/3/8 13:18
 # 文件名称 : train.py
 
-# train the shellcode detection model
-import torch
-import torch.nn as nn
-import tensorflow as tf
-import os
-import numpy as np
-from torch.utils.data import DataLoader
 from data_process import *
+import sklearn
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 
 
-# 训练函数
-def train(epochs):
-	model.train()  # 模型设置成训练模式
-	for epoch in range(epochs):  # 训练epochs轮
-		print('epoch: ', epoch)
-		loss_sum = 0   # 记录每轮loss
-		for batch in train_iter:
-			input_, label = batch
-			optimizer.zero_grad()  # 每次迭代前设置grad为0
-			output = model(input_)
-			loss = criterion(output, label)  # 计算loss
-			loss.backward()  # 反向传播
-			optimizer.step()  # 更新模型参数
-			loss_sum += loss.item()  # 累积loss
-		print('epoch: ', epoch, 'loss:', loss_sum / len(train_iter))
-
-	test_acc = evaluate()  # 模型训练完后进行测试
-	print('test_acc:', test_acc)
-
-# 测试函数
-def evaluate():
-	model.eval()
-	total_acc, total_count = 0, 0
-	loss_sum = 0
-
-	with torch.no_grad():  # 测试时不计算梯度
-		for batch in test_iter:
-			input_, label = batch
-
-			predicted_label = model(input_)
-
-			loss = criterion(predicted_label, label)  # 计算loss
-			total_acc += (predicted_label.argmax(1) == label).sum().item()  # 累计正确预测数
-			total_count += label.size(0)  # 累积总数
-			loss_sum += loss.item()  # 累积loss
-		print('test_loss:', loss_sum / len(test_iter))
-
-	return total_acc/total_count
-
-
-# BiLSTM模型
-class LSTM_Network(nn.Module):
-	def __init__(self):
-		super(LSTM_Network, self).__init__()
-		self.embedding = nn.Embedding(vocab_size, embed_dim)
-		self.lstm = nn.GRU(input_size=embed_dim, hidden_size=int(embed_dim / 2), batch_first=True, bidirectional=True)
-		# 如果bidirectional设置True则为BiLSTM，但是相应的hidden_size记得除2
-		self.fc = nn.Linear(in_features=embed_dim, out_features=2)  # 全连接层
-
-	def forward(self, input):
-		input = self.embedding(input)
-		output, _ = self.lstm(input)  # output的size为[batch, seq, embedding]
-		output = self.fc(output[:, -1, :])   # 句子最后时刻的 hidden state
-
-		return output
+def train_model(model):
+    model.fit(train_features, train_label)
+    acu_train = model.score(train_features, train_label)
+    acu_test = model.score(test_features, test_label)
+    y_pred = model.predict(test_features)
+    recall = sklearn.metrics.recall_score(test_label, y_pred, average="macro")
+    return acu_train, acu_test, recall
 
 
 def model_save():
@@ -76,8 +24,8 @@ def model_save():
 	:return:
 	'''
 	# 创建文件目录
-	Dir = r'./model/Bilstm/'
-	path = Dir + r'model-' + str(epoch) + r'.pkl'
+	Dir = r'./model/'
+	path = Dir + r'model-random-tree' + r'.pkl'
 	# joblib.dump(model, path)
 	torch.save(model, path)
 
@@ -99,25 +47,21 @@ if __name__ == '__main__':
 	# predata()
 	print('prepare trainset')
 	# train_dataset = MyDataset(Trainjson)
-	train_dataset = MyDataset(Traintxt)
+	# train_features, train_label = MyDataset(Traintxt)
 	print('prepare testset')
 	# test_dataset = MyDataset(Testjson)
-	test_dataset = MyDataset(Testtxt)
-	print('prepare train iter')
-	train_iter = DataLoader(train_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
-	print('prepare test iter')
-	test_iter = DataLoader(test_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
+	# test_features, test_label = MyDataset(Testtxt)
+	# print('prepare train iter')
+	# train_iter = DataLoader(train_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
+	# print('prepare test iter')
+	# test_iter = DataLoader(test_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
 
 	# 定义模型
-	# 此处只是初始代码，真正的model应该是随机森林分类器，而不是LSTM模型
 	# Waiting for adding......
-	model = LSTM_Network().to(device)
-
-	# 定义loss函数、优化器
-	criterion = nn.CrossEntropyLoss()
-	optimizer = torch.optim.Adagrad(model.parameters(), lr=0.01, weight_decay=0.001)
-
-	# 开始训练
-	print('begin train......')
-	train(epoch)
+	predata()
+	features, labels = MyDataset(Dataset)
+	train_features, test_features, train_label,test_label = train_test_split(features, labels, test_size=0.3, random_state=2300)
+	model = RandomForestClassifier(n_estimators=70, max_features=8,random_state=0)
+	acu_train, acu_test, recall = train_model(model)
+	print(acu_train, acu_test, recall)
 	model_save()
