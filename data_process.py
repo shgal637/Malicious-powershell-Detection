@@ -9,6 +9,7 @@ import torch
 import numpy as np
 from config import *
 import os
+from features import *
 
 
 # 定义自己的Dataset类，用于加载和处理数据
@@ -32,8 +33,8 @@ class MyDataset(Dataset):
             self.label_list.append(line['label'])
 
     # 获取数据长度
-	def __len__(self):
-            return len(self.file)
+    def __len__(self):
+        return len(self.file)
 
     # 按照index获取数据
     def __getitem__(self, index):
@@ -45,8 +46,8 @@ def predata():
 	:return: json file, train and test
 	'''
     # 准备json格式
-    trainfile = open(Trainjson, mode='a', encoding='utf-8')
-    testfile = open(Testjson, mode='a', encoding='utf-8')
+    trainfile = open(Trainjson, mode='w+', encoding='utf-8')
+    testfile = open(Testjson, mode='w+', encoding='utf-8')
     trainfile.write('[')
     testfile.write('[')
     trainfile.close()
@@ -64,7 +65,6 @@ def predata():
     trainfile.close()
     testfile.close()
     return 0
-
 
 def alter_data(path,label,option):
     '''
@@ -85,7 +85,7 @@ def alter_data(path,label,option):
         fileStr = f.readlines()  # 把每行以字符串，存放到fileStr列表中
         fileStr_row = ''  # 存放最后一整行字符串的变量
         for i in range(0, len(fileStr)):  # 遍历每行
-            fileStr_row = fileStr_row + fileStr[i].strip('\n').lstrip()  # 去掉两边的换行，去掉左边的空格
+            fileStr_row = fileStr_row + fileStr[i].strip('\n').lstrip().replace('"', '').replace('\\','\\\\')  # 去掉两边的换行，去掉左边的空格，去掉双引号
 
         # train和test交替构建数据集
         if (count % 2 == 0):
@@ -125,3 +125,7 @@ def batch_process(batch):
     # 将数据类型转化成tensor
     label_list = torch.tensor(label_list, dtype=torch.long)
     return text_list_, label_list
+
+if __name__ == "__main__":
+    predata()
+    
