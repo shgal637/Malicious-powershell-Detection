@@ -3,7 +3,7 @@ from config import *
 
 import json
 
-from features import Information_entropy, ShellCode_Detect, Top_five_characters
+from features import URL_IP, Character_length, Information_entropy, ShellCode_Detect, Special_variable_names, Top_five_characters
 
 
 
@@ -35,7 +35,7 @@ precise = TP / (TP + FP)   # 精确率：预测为label=1的恶意脚本中有�
 recall = TP / (TP + FN)    # 召回率：原来样本中所有的malicious powershell有多少预测为恶意
 print('PRECISE：%f' % precise)
 print('RECALL：%f' % recall)
-# PRECISE：0.997024  去掉了pure，只有两个
+# PRECISE：0.997024
 # RECALL：0.478344 这次运行结果表明，shellcode很能表现出恶意脚本，有47%的恶意样本都用到了shellcode
 '''
 
@@ -56,13 +56,75 @@ print('bengin entropy average：', bengin_entropy / bengin_num)
 print('malicious entropy average：', malicious_entropy / malicious_num)
 '''
 
+# for line in file:
+    # print(Top_five_characters(line['code']))
+    # print(Character_length(line['code']))
+    # print(URL_IP(line['code']))
+    # print(Special_variable_names(line['code']))
+
+'''
+accuracy = 0
+plus = 0  # label = 0 正常样本
+minus = 0 # label = 1 恶意、混合样本
+TP = 0    # 正类预测为正类
+FN = 0    # 正类预测为负类
+FP = 0    # 负类预测为正类
+TN = 0    # 负类预测为负类
+
+# 选定 label = 1 为正样本， label = 0 为负样本
 for line in file:
-    print(Top_five_characters(line['code']))
-    break
+    if URL_IP(line['code']) == int(line['label']) and int(line['label']) == 1:
+        # accuracy = accuracy + 1
+        TP = TP + 1
+    if URL_IP(line['code']) == int(line['label']) and int(line['label']) == 0:
+        TN = TN + 1
+    if URL_IP(line['code']) != int(line['label']) and int(line['label']) == 0:
+        FP = FP + 1
+    if URL_IP(line['code']) != int(line['label']) and int(line['label']) == 1:
+        FN = FN + 1
+
+precise = TP / (TP + FP)   # 精确率：预测为label=1的恶意脚本中有多少是真的malicious powershell
+recall = TP / (TP + FN)    # 召回率：原来样本中所有的malicious powershell有多少预测为恶意
+print('PRECISE：%f' % precise)
+print('RECALL：%f' % recall)
+# PRECISE：0.835448
+# RECALL：0.485721
+'''
+
+'''
+accuracy = 0
+plus = 0  # label = 0 正常样本
+minus = 0 # label = 1 恶意、混合样本
+TP = 0    # 正类预测为正类
+FN = 0    # 正类预测为负类
+FP = 0    # 负类预测为正类
+TN = 0    # 负类预测为负类
+
+# 选定 label = 1 为正样本， label = 0 为负样本
+for line in file:
+    if Special_variable_names(line['code']) > 0 and int(line['label']) == 1:
+        # accuracy = accuracy + 1
+        TP = TP + 1
+    if Special_variable_names(line['code']) == 0 and int(line['label']) == 0:
+        TN = TN + 1
+    if Special_variable_names(line['code']) > 0 and int(line['label']) == 0:
+        FP = FP + 1
+    if Special_variable_names(line['code']) == 0 and int(line['label']) == 1:
+        FN = FN + 1
+
+precise = TP / (TP + FP)   # 精确率：预测为label=1的恶意脚本中有多少是真的malicious powershell
+recall = TP / (TP + FN)    # 召回率：原来样本中所有的malicious powershell有多少预测为恶意
+print('PRECISE：%f' % precise)
+print('RECALL：%f' % recall)
+# PRECISE：0.966527
+# RECALL：0.329843 ...无话可说
+'''
+
+
 
 # from features import *
 
-# string = 'https://s.weibo.com/weibo?q=%23%E9%95%BF%E6%B4%A5%E6%B9%96%E4%B8%BB%E6%BC%94%E6%9C%AA%E6%9B%9D%E5%85%89%E7%9A%84%E9%80%A0%E5%9E%8B%23&topic_ad='
+# string = '42145511151http://dhj.fdjjd.com/78078979/dsdfjkk.htm faef aettps://s.weibo.com/weibo?q=%23%E9%95%BF%E6%B4%A5%E6%B9%96%E4%B8%BB%E6%BC%94%E6%9C%AA%E6%9B%9D%E5%85%89%E7%9A%84%E9%80%A0%E5%9E%8B%23&topic_ad='
 # a = URL_IP(string)
 # print(a)
 

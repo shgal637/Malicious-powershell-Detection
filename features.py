@@ -7,7 +7,6 @@ import math
 import re
 
 
-
 def  ShellCode_Detect(text):
     '''
     detect the presence of shellcode
@@ -60,9 +59,9 @@ def Top_five_characters(text):
     for i in set(text):
         result[i]= text.count(i)
         result_order = sorted(result.items(), key=lambda x:x[1], reverse=True)    # sorted返回的是一个元组构成的list
-    print('result_order:', result_order)
+    # print('result_order:', result_order)
     for i in range(0, 5):
-        # top5_character = top5_character + str(ord(str(result_order[i])))
+        top5_character = top5_character + str(ord(result_order[i][0]))
         if i != 4:
             top5_character = top5_character + ' '
     return top5_character
@@ -78,8 +77,10 @@ def Character_length(text):
     str_num = 0           #字符串数量
     max_length = 0        #最大字符串长度
     aver_length = 0       #平均字符串长度
-    cut_text = re.split(')({} ;][', text)
-    # print(cut_text)
+    cut_text = re.split(r'[\)\({} ;\]\[]', text)    #利用多种切割符，格式为r'[]',必须要加中括号，所以中间的切割符涉及括号都要加转义
+    print(cut_text)                                 #这一步输出有个问题，当两种切割符在一起出现的时候，re也会进行切割，并生成''空字符，占位置
+    cut_text = list(filter(None, cut_text))         #Python内建filter()函数 - 过滤list, 过滤空字符和None
+    print(cut_text)
     str_num = len(cut_text)
     for i in cut_text:
         aver_length = aver_length + len(i)
@@ -96,19 +97,26 @@ def URL_IP(text):
     :param text:
     :return:presence is 1, else 0
     '''
-    p_ip = re.compile('^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$')
-    p = re.compile(
-        r'^(?:http|ftp)s?://' # http:// or https://
-        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
-        r'localhost|' #localhost...
-        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or ip
-        r'(?::\d+)?' # optional port
-        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
-
-    if p.search(text) or p_ip.search(text):
+    url = re.findall(r"https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+", text)
+    compile_rule = re.compile(r'\d+[\.]\d+[\.]\d+[\.]\d+')
+    ip = re.findall(compile_rule, text)
+    if url or ip:
         return 1
     else:
         return 0
+    # p_ip = re.compile('^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$')
+    # p = re.compile(
+    #     r'^(?:http|ftp)s?://'  # http:// or https://
+    #     r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'  # domain...
+    #     r'localhost|'  # localhost...
+    #     r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'  # ...or ip
+    #     r'(?::\d+)?'  # optional port
+    #     r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+
+    # if p.search(text) or p_ip.search(text):
+    #     return 1
+    # else:
+    #     return 0
 
 
 def Special_variable_names(text):
@@ -117,6 +125,9 @@ def Special_variable_names(text):
     以使用的特殊变量名的次数作为特征
     :param text:
     :return: the number
+    '''
+    '''
+    这里采取的方式比较简单，选取了以$开头的字符串，认定为变量名；接着用正则匹配符选出所有，在里面找特殊变量名的次数
     '''
     p = re.compile(r'\$(.*?)[ -\.:=\[\]()]')
 
@@ -141,5 +152,6 @@ def AST(text):
     :return:features
     '''
     return 0
+
 
 
