@@ -5,13 +5,13 @@
 path_malicious = "./data/malicious_pure"             # 恶性样本相对路径
 path_mixed = "./data/mixed_malicious"                # 混杂样本相对路径
 path_benign = "./data/powershell_benign_dataset"     # 良性样本相对路径
-Trainjson = './data/train.json'                      # 训练数据集json格式
-Testjson = './data/test.json'                        # 测试数据集json格式
-Dataset = './data/dataset.txt'
-Traintxt = './data/train.txt'
-Testtxt = './data/test.txt'
+Dataset = './data/dataset.csv'
+
 # embed_dim = 300     # 暂时的参数，注意更换模型
 # epoch = 100
+
+headers = ['label', 'AST1', 'AST2', 'AST3', 'AST4', 'AST5', 'AST6', 'AST7', 'AST8', 'AST9', 'AST10', 'AST11', 'AST12', 'AST13', 'AST14', 'AST15', 'AST16', 'AST17', 'AST18', 'AST19', 'AST20', 'AST21', 'AST22','AST23',
+           'behaviour','shell','entropy','top1char', 'top2char', 'top3char', 'top4char', 'top5char','UrlIp','strNum','maxLen','AveLen','var']
 
 # AST中的23种节点类型
 # ParameterAst, CommandParameterAst?

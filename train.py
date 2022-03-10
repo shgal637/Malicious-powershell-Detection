@@ -31,17 +31,17 @@ def model_save():
 
 
 if __name__ == '__main__':
-	TORCH_SEED = 21  # 随机数种子
-	os.environ["CUDA_VISIBLE_DEVICES"] = '0'  # 设置模型在几号GPU上跑
-	device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设置device
-
-	# 设置随机数种子，保证结果一致
-	os.environ['PYTHONHASHSEED'] = str(TORCH_SEED)
-	torch.manual_seed(TORCH_SEED)
-	torch.cuda.manual_seed_all(TORCH_SEED)
-	np.random.seed(TORCH_SEED)
-	torch.backends.cudnn.deterministic = True
-	torch.backends.cudnn.benchmark = False
+	# TORCH_SEED = 21  # 随机数种子
+	# os.environ["CUDA_VISIBLE_DEVICES"] = '0'  # 设置模型在几号GPU上跑
+	# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设置device
+	#
+	# # 设置随机数种子，保证结果一致
+	# os.environ['PYTHONHASHSEED'] = str(TORCH_SEED)
+	# torch.manual_seed(TORCH_SEED)
+	# torch.cuda.manual_seed_all(TORCH_SEED)
+	# np.random.seed(TORCH_SEED)
+	# torch.backends.cudnn.deterministic = True
+	# torch.backends.cudnn.benchmark = False
 
 	# 创建数据集
 	# predata()
@@ -56,10 +56,14 @@ if __name__ == '__main__':
 	# print('prepare test iter')
 	# test_iter = DataLoader(test_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
 
-	# 定义模型
-	# Waiting for adding......
-	predata()
-	features, labels = MyDataset(Dataset)
+	# get all infos, csv
+	DataSet(path_malicious)
+	DataSet(path_mixed)
+	DataSet(path_benign)
+
+	# read features and labels from csv......
+	features, labels = [],[]
+
 	train_features, test_features, train_label,test_label = train_test_split(features, labels, test_size=0.3, random_state=2300)
 	model = RandomForestClassifier(n_estimators=70, max_features=8,random_state=0)
 	acu_train, acu_test, recall = train_model(model)

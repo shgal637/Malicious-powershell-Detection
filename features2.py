@@ -37,7 +37,7 @@ def Information_entropy(text):
     entropy = 0
     for i in set(text):
         result[i] = text.count(i)
-    T=sum(result.values())
+    T = sum(result.values())
     for key in result.keys():
         entropy = entropy - (result[key] / T) * math.log10(result[key] / T)
     return entropy

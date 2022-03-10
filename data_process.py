@@ -9,29 +9,84 @@ import torch
 import numpy as np
 from config import *
 import os
+from features import *
+from PowerShellProfiler import *
+import csv
 
-
-def MyDataset(path):
+def DataSet(Dirpath):
     '''
-    用于加载和处理数据
-    :param path: 路径
+    create the features.csv, the datasets
+    :param path:Directory
     :return:
     '''
-    text_list = []
-    label_list = []
-        # 读取数据并且处理数据
-    with open(path, mode='r', encoding='utf-8') as f:
-        file = f.readlines()
-    for line in file:
-        features = []
-        label, code = line.split('\t', 1)
-        # extract the features
-        # waiting for adding......
+    files = os.listdir(Dirpath)  # 读取目录下所有文件名
+    # Write to csv
+    with open(Dataset, 'r', encoding='utf-8') as f:
+        write = csv.writer(f)
+    write.writerow(headers)
+    for file in files:  # 依次读取每个ps1文件
+        filepath = Dirpath + "/" + file
+        features = Extract_Features(filepath)
+        write.writerow(features)
+    f.close()
 
+def Extract_Features(path):
+    '''
+    extract the features and write to csv
+    :param path: ps1
+    :return:
+    '''
+    features = []
+    # preprocess script
+    code, label = alter_data(path)
+    features.append(label)
 
-        text_list.append(features)
-        label_list.append(label)
-    return text_list,label_list
+    # AST
+    # /data/powershell_benign_dataset_xml/1.xml
+    astpath = path.rsplit("/",1)[0] + '_xml/' + path.rsplit("/",1)[-1].replace('ps1','xml')
+    astDir = astpath.rsplit("/", 1)[0]
+    if os.path.exists(astDir) == False:  # 创建对应row文件夹，没有就新建
+        os.mkdir(astDir)
+    # list[23]
+    proportion = AST(path,astpath)
+    # features.append(proportion)
+    for i in proportion:
+        features.append(i)
+
+    # function level, behaviour based,int
+    behaviour_scores = Scores(path,False)
+    features.append(behaviour_scores)
+
+    # ShellCode Detection,int
+    shell = ShellCode_Detect(code)
+    features.append(shell)
+
+    # Information entropy, int
+    entropy = Information_entropy(code)
+    features.append(entropy)
+
+    # Top_five_characters, list[5]
+    top5char = Top_five_characters(code)
+    for i in top5char:
+        features.append(i)
+
+    # URL_IP, int
+    urlIp = URL_IP(code)
+    features.append(urlIp)
+
+    # Character_length,list[3]
+    char = Character_length(code)
+    for i in char:
+        features.append(i)
+
+    # Special_variable_names
+    var = Special_variable_names(code)
+    features.append(var)
+
+    # FastText
+    # Adding......
+
+    return features
 
 
 def batch_process(batch):
@@ -54,37 +109,21 @@ def batch_process(batch):
     return text_list_, label_list
 
 
-def predata():
+def alter_data(path):
     '''
-	turn the datasets to json, and create dataset for training and testing
-	因为ps1文件内容中含有{}等符号，会导致后续json文件读取出现错误，所以更改文件格式为txt
-	:return: json file, train and test
-	'''
-    alter_data(path_malicious,1)
-    alter_data(path_mixed,1)
-    alter_data(path_benign,0)
-    return 0
-
-
-def alter_data(path,label):
+     preprocess the script and get label
+    :param path: the path of ps1
+    :return:code and label
     '''
-    把ps1脚本进行预处理（转换成一行的字符串，去除换行、空格等情况），并且构建数据集
-    :param path: 文件夹路径
-    :param label: 标签
-    :return:
-    '''
-    dataset = open(Dataset, mode='a', encoding='utf-8')
+    fileStr_row = ''  # 存放最后一整行字符串的变量
 
-    files = os.listdir(path)  # 读取目录下所有文件名
-    for count in range(len(files)):  # 依次读取每个ps1文件
-        # 预处理字符串
-        file = files[count]
-        f = open(path + "/" + file, 'r', encoding='utf-8')
-        fileStr = f.readlines()  # 把每行以字符串，存放到fileStr列表中
-        fileStr_row = ''  # 存放最后一整行字符串的变量
-        for i in range(0, len(fileStr)):  # 遍历每行
-            fileStr_row = fileStr_row + fileStr[i].strip('\n').lstrip()  # 去掉两边的换行，去掉左边的空格
+    f = open(path, 'r', encoding='utf-8')
+    fileStr = f.readlines()  # 把每行以字符串，存放到fileStr列表中
+    for i in range(0, len(fileStr)):  # 遍历每行
+        fileStr_row = fileStr_row + fileStr[i].strip('\n').lstrip().replace('"', '').replace('\\','\\\\')  # 去掉两边的换行，去掉左边的空格，去掉双引号
+    f.close()
 
-        dataset.write(label + '\t' + fileStr_row + '\n')
-    Dataset.close()
-    return 0
+    label = 1
+    if 'benign' in path:
+        label = 0
+    return fileStr_row, label
