@@ -32,6 +32,8 @@ def Information_entropy(text):
     '''
     '''
     用信息熵公式H(X)=-∑(xi/T)log(xi/T)
+    相对而言，Powershell脚本的语义更接近自然语言，良性脚本的英文字母分布接近于自然语言处理分布；
+    换句话说，良性脚本的熵高于混淆脚本，因此把每个脚本的信息熵作为一个特征
     '''
     result = {}
     entropy = 0
@@ -57,9 +59,10 @@ def Top_five_characters(text):
     top5_character = ''
     for i in set(text):
         result[i]= text.count(i)
-        result_order = sorted(result.items(), key=lambda x:x[1], reverse=True)
+        result_order = sorted(result.items(), key=lambda x:x[1], reverse=True)    # sorted返回的是一个元组构成的list
+    print('result_order:', result_order)
     for i in range(0, 5):
-        top5_character = top5_character + str(ord(result_order.keys()[i]))
+        # top5_character = top5_character + str(ord(str(result_order[i])))
         if i != 4:
             top5_character = top5_character + ' '
     return top5_character
