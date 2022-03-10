@@ -10,6 +10,7 @@ Dataset = './data/dataset.csv'
 # embed_dim = 300     # 暂时的参数，注意更换模型
 # epoch = 100
 
+# 37
 headers = ['label', 'AST1', 'AST2', 'AST3', 'AST4', 'AST5', 'AST6', 'AST7', 'AST8', 'AST9', 'AST10', 'AST11', 'AST12', 'AST13', 'AST14', 'AST15', 'AST16', 'AST17', 'AST18', 'AST19', 'AST20', 'AST21', 'AST22','AST23',
            'behaviour','shell','entropy','top1char', 'top2char', 'top3char', 'top4char', 'top5char','UrlIp','strNum','maxLen','AveLen','var']
 

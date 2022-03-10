@@ -12,6 +12,19 @@ import os
 from features import *
 from PowerShellProfiler import *
 import csv
+import pandas as pd
+
+def ReadData():
+    '''
+    get the features from csv
+    :return: features and labels
+    '''
+    raw_data = pd.read_csv(Dataset, header=0)
+    data = raw_data.values
+    features = data[:, 1:]
+    labels = data[:, 0]
+    return features,labels
+
 
 def DataSet(Dirpath):
     '''
@@ -21,8 +34,8 @@ def DataSet(Dirpath):
     '''
     files = os.listdir(Dirpath)  # 读取目录下所有文件名
     # Write to csv
-    with open(Dataset, 'r', encoding='utf-8') as f:
-        write = csv.writer(f)
+    f = open(Dataset, 'a', encoding='utf-8')
+    write = csv.writer(f)
     write.writerow(headers)
     for file in files:  # 依次读取每个ps1文件
         filepath = Dirpath + "/" + file

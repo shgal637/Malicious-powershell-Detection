@@ -62,7 +62,7 @@ if __name__ == '__main__':
 	DataSet(path_benign)
 
 	# read features and labels from csv......
-	features, labels = [],[]
+	features, labels = ReadData()
 
 	train_features, test_features, train_label,test_label = train_test_split(features, labels, test_size=0.3, random_state=2300)
 	model = RandomForestClassifier(n_estimators=70, max_features=8,random_state=0)

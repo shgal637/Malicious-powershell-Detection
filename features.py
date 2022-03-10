@@ -57,7 +57,7 @@ def Top_five_characters(text):
     for i in set(text):
         result[i] = text.count(i)
         result_order = sorted(result.items(), key=lambda x: x[1], reverse=True)  # sorted返回的是一个元组构成的list
-    print(result_order)
+    # print(result_order)
     for i in range(5):
         h = ord(result_order[i][0])
         top5_character.append(h)
@@ -116,9 +116,9 @@ def Character_length(text):
     max_length = 0        #最大字符串长度
     aver_length = 0       #平均字符串长度
     cut_text = re.split(r'[\)\({} ;\]\[]', text)    #利用多种切割符，格式为r'[]',必须要加中括号，所以中间的切割符涉及括号都要加转义
-    print(cut_text)                                 #这一步输出有个问题，当两种切割符在一起出现的时候，re也会进行切割，并生成''空字符，占位置
+    # print(cut_text)                                 #这一步输出有个问题，当两种切割符在一起出现的时候，re也会进行切割，并生成''空字符，占位置
     cut_text = list(filter(None, cut_text))         #Python内建filter()函数 - 过滤list, 过滤空字符和None
-    print(cut_text)
+    # print(cut_text)
     str_num = len(cut_text)
     for i in cut_text:
         aver_length = aver_length + len(i)
