@@ -45,10 +45,10 @@ if __name__ == '__main__':
 
 	# 创建数据集
 	# predata()
-	print('prepare trainset')
+	# print('prepare trainset')
 	# train_dataset = MyDataset(Trainjson)
 	# train_features, train_label = MyDataset(Traintxt)
-	print('prepare testset')
+	# print('prepare testset')
 	# test_dataset = MyDataset(Testjson)
 	# test_features, test_label = MyDataset(Testtxt)
 	# print('prepare train iter')
@@ -57,15 +57,23 @@ if __name__ == '__main__':
 	# test_iter = DataLoader(test_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
 
 	# get all infos, csv
-	DataSet(path_malicious)
-	DataSet(path_mixed)
-	DataSet(path_benign)
+	print('get malicious datasets......\n')
+	DataSet(new_path_malicious)
+	print('get mixed datasets......\n')
+	DataSet(new_path_mixed)
+	print('get benign datasets......\n')
+	DataSet(new_path_benign)
 
 	# read features and labels from csv......
+	print('Read features and labels......\n')
 	features, labels = ReadData()
 
+	print('training......\n')
 	train_features, test_features, train_label,test_label = train_test_split(features, labels, test_size=0.3, random_state=2300)
-	model = RandomForestClassifier(n_estimators=70, max_features=8,random_state=0)
+	model = RandomForestClassifier(n_estimators=70, max_features=8, random_state=0)
 	acu_train, acu_test, recall = train_model(model)
+	print('acu_train, acu_test, recall is :')
 	print(acu_train, acu_test, recall)
+	print('model save......\n')
 	model_save()
+	print('finish')

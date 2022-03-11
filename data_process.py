@@ -39,8 +39,10 @@ def DataSet(Dirpath):
     write.writerow(headers)
     for file in files:  # 依次读取每个ps1文件
         filepath = Dirpath + "/" + file
+        print(filepath)
         features = Extract_Features(filepath)
         write.writerow(features)
+        print('\n')
     f.close()
 
 def Extract_Features(path):
@@ -140,3 +142,13 @@ def alter_data(path):
     if 'benign' in path:
         label = 0
     return fileStr_row, label
+
+
+def strip_control_characters(s):
+    word = ''
+    for i in s:
+        if ord(i) > 31 and ord(i) < 127:
+            word += i
+        else:
+            print(i, ord(i))
+    return word

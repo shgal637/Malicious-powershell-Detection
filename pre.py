@@ -1,3 +1,7 @@
+# *_* coding : utf-8 *_*
+# 开发人员 : DELL
+# 开发时间 : 2022/3/11 23:54
+# 文件名称 : pre.py
 import os
 from config import *
 
