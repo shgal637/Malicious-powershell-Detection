@@ -31,6 +31,7 @@ def Search(root_node, level, result_list):
 def getXmlData(file_name):
     '''
     get the nodes in ast
+    :rtype: object
     :param file_name: the path of ast file
     :return: list of nodes
     '''

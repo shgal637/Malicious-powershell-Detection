@@ -139,11 +139,15 @@ def AST(path,astfile):
     '''
     proportion = []
     # use the Get-AST.ps1 to process the scripts
-    psxmlgen = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
-                                 r'.\Get-AST.ps1', path, astfile], cwd=os.getcwd())
-    result = psxmlgen.wait()
-    # use xml to calculate the features
-    Nodes = getXmlData(astfile)
+    try:
+        psxmlgen = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
+                                     r'.\Get-AST.ps1', path, astfile], cwd=os.getcwd())
+        result = psxmlgen.wait()
+        # use xml to calculate the features
+        Nodes = getXmlData(astfile)
+    except:
+        return None
+
     NodeCount = {}
     Count = 0
     for type in NodeType:
@@ -159,4 +163,5 @@ def AST(path,astfile):
     # return the value
     for type in NodeCount.keys():
         proportion.append(NodeCount[type])
+
     return proportion

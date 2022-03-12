@@ -32,6 +32,7 @@ def Newdata(Dirpath):
         newfile = newDir + '/' + file
         strip_control_characters(filepath, newfile)
 
+
 if __name__ == '__main__':
     Newdata(path_malicious)
     Newdata(path_mixed)

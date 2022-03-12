@@ -1,34 +1,17 @@
 import os
 from config import *
+import csv
+from features import *
 
-def strip_control_characters(oldfile, newfile):
-    f = open(oldfile,'r',encoding='utf-8')
-    s = f.read()
-    word = ''
-    for i in s:
-        if ord(i) > 31 and ord(i) < 127:
-            word += i
-    n = open(newfile,'a',encoding='utf-8')
-    n.write(word)
-    return 0
-
-
-def Newdata(Dirpath):
-    '''
-    create the files that delete some special ascii
-    :param path:Directory
-    :return:
-    '''
-    files = os.listdir(Dirpath)  # 读取目录下所有文件名
-    for file in files:  # 依次读取每个ps1文件
-        filepath = Dirpath + "/" + file
-        newDir = Dirpath + '_new'
-        if os.path.exists(newDir) == False:  # 创建对应row文件夹，没有就新建
-            os.mkdir(newDir)
-        newfile = newDir + '/' + file
-        strip_control_characters(filepath, newfile)
+def compare(file1, file2):
+    files1 = os.listdir(file1)  # 读取目录下所有文件名
+    files2 = os.listdir(file2)
+    for i in files1:
+        if i not in files2:
+            print(i)
 
 if __name__ == '__main__':
-    Newdata(path_malicious)
-    Newdata(path_mixed)
-    Newdata(path_benign)
+    file = 'data/malicious_pure/git_35.ps1'
+    ast = 'testData/git35.xml'
+    h = AST(file,ast)
+    print(h)
