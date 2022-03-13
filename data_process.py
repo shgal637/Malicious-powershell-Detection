@@ -35,17 +35,21 @@ def DataSet(Dirpath):
     files = os.listdir(Dirpath)  # 读取目录下所有文件名
     # Write to csv
     f = open(Dataset, 'a', encoding='utf-8',newline='')
+    Log = open('./log.txt', 'a', encoding='utf-8')
     write = csv.writer(f)
-    write.writerow(headers)
+    # write.writerow(headers)
     for file in files:  # 依次读取每个ps1文件
         filepath = Dirpath + "/" + file
         print(filepath)
         features = Extract_Features(filepath)
-        if features is None:
+        print('\n')
+        if features == 0:
+            Log.write('features NONE :  ' + filepath + '\n')
             continue
         write.writerow(features)
-        print('\n')
     f.close()
+    Log.close()
+
 
 def Extract_Features(path):
     '''
@@ -67,7 +71,7 @@ def Extract_Features(path):
     # list[23]
     proportion = AST(path,astpath)
     if proportion is None:
-        return None # ERROR
+        return 0
 
     # features.append(proportion)
     for i in proportion:

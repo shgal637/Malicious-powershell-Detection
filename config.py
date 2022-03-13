@@ -6,9 +6,9 @@ path_malicious = "./data/malicious_pure"             # 恶性样本相对路径
 path_mixed = "./data/mixed_malicious"                # 混杂样本相对路径
 path_benign = "./data/powershell_benign_dataset"     # 良性样本相对路径
 Dataset = './data/dataset.csv'
-new_path_malicious = "./data/malicious_pure_new"             # 处理后的恶性样本相对路径
-new_path_mixed = "./data/mixed_malicious_new"                # 处理后的混杂样本相对路径
-new_path_benign = "./data/powershell_benign_dataset_new"     # 处理后的良性样本相对路径
+# new_path_malicious = "./data/malicious_pure_new"             # 处理后的恶性样本相对路径
+# new_path_mixed = "./data/mixed_malicious_new"                # 处理后的混杂样本相对路径
+# new_path_benign = "./data/powershell_benign_dataset_new"     # 处理后的良性样本相对路径
 
 # embed_dim = 300     # 暂时的参数，注意更换模型
 # epoch = 100
@@ -29,3 +29,4 @@ NodeType = ['VariableExpressionAst', 'TypeExpressionAst', 'SubExpressionAst', 'S
                 'ConvertExpressionAst', 'CommandParameterAst', 'CommandExpressionAst', 'CommandAst',
                 'BinaryExpressionAst', 'AttributeAst',
                 'AssignmentStatementAst']
+

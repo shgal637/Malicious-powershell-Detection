@@ -57,12 +57,15 @@ if __name__ == '__main__':
 	# test_iter = DataLoader(test_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
 
 	# get all infos, csv
-	print('get malicious datasets......\n')
-	DataSet(new_path_malicious)
-	print('get mixed datasets......\n')
-	DataSet(new_path_mixed)
-	print('get benign datasets......\n')
-	DataSet(new_path_benign)
+	# f = open(Dataset, 'a', encoding='utf-8', newline='')
+	# write = csv.writer(f)
+	# write.writerow(headers)
+	# print('get malicious datasets......\n')
+	# DataSet(path_malicious)
+	# print('get mixed datasets......\n')
+	# DataSet(path_mixed)
+	# print('get benign datasets......\n')
+	# DataSet(path_benign)
 
 	# read features and labels from csv......
 	print('Read features and labels......\n')
