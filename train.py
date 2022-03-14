@@ -31,41 +31,17 @@ def model_save():
 
 
 if __name__ == '__main__':
-	# TORCH_SEED = 21  # 随机数种子
-	# os.environ["CUDA_VISIBLE_DEVICES"] = '0'  # 设置模型在几号GPU上跑
-	# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 设置device
-	#
-	# # 设置随机数种子，保证结果一致
-	# os.environ['PYTHONHASHSEED'] = str(TORCH_SEED)
-	# torch.manual_seed(TORCH_SEED)
-	# torch.cuda.manual_seed_all(TORCH_SEED)
-	# np.random.seed(TORCH_SEED)
-	# torch.backends.cudnn.deterministic = True
-	# torch.backends.cudnn.benchmark = False
-
-	# 创建数据集
-	# predata()
-	# print('prepare trainset')
-	# train_dataset = MyDataset(Trainjson)
-	# train_features, train_label = MyDataset(Traintxt)
-	# print('prepare testset')
-	# test_dataset = MyDataset(Testjson)
-	# test_features, test_label = MyDataset(Testtxt)
-	# print('prepare train iter')
-	# train_iter = DataLoader(train_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
-	# print('prepare test iter')
-	# test_iter = DataLoader(test_dataset, batch_size=25, shuffle=True, collate_fn=batch_process)
 
 	# get all infos, csv
-	# f = open(Dataset, 'a', encoding='utf-8', newline='')
-	# write = csv.writer(f)
-	# write.writerow(headers)
-	# print('get malicious datasets......\n')
-	# DataSet(path_malicious)
-	# print('get mixed datasets......\n')
-	# DataSet(path_mixed)
-	# print('get benign datasets......\n')
-	# DataSet(path_benign)
+	f = open(Dataset, 'a', encoding='utf-8', newline='')
+	write = csv.writer(f)
+	write.writerow(headers)
+	print('get malicious datasets......\n')
+	DataSet(path_malicious)
+	print('get mixed datasets......\n')
+	DataSet(path_mixed)
+	print('get benign datasets......\n')
+	DataSet(path_benign)
 
 	# read features and labels from csv......
 	print('Read features and labels......\n')

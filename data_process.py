@@ -13,6 +13,7 @@ from features import *
 from PowerShellProfiler import *
 import csv
 import pandas as pd
+from FastText import fasttext_predict
 
 def ReadData():
     '''
@@ -37,7 +38,6 @@ def DataSet(Dirpath):
     f = open(Dataset, 'a', encoding='utf-8',newline='')
     Log = open('./log.txt', 'a', encoding='utf-8')
     write = csv.writer(f)
-    # write.writerow(headers)
     for file in files:  # 依次读取每个ps1文件
         filepath = Dirpath + "/" + file
         print(filepath)
@@ -107,8 +107,10 @@ def Extract_Features(path):
     var = Special_variable_names(code)
     features.append(var)
 
-    # FastText
-    # Adding......
+    # FastText,list[2]
+    fasttext = fasttext_predict(code)
+    for i in fasttext:
+        features.append(i)
 
     return features
 
