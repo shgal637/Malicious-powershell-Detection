@@ -1758,7 +1758,7 @@ def Scores(path, debug):
     # Score the behaviors and print final results
     score, verdict, behaviorTags = scoreBehaviors(behaviorTags)
     # print("%s , %s , %s , %s , %s" % (args.file, score, verdict, scriptTime, "[" + " | ".join(behaviorTags) + "]"))
-    print("%s , %s , %s , %s" % (score, verdict, scriptTime, "[" + " | ".join(behaviorTags) + "]"))
+    # print("%s , %s , %s , %s" % (score, verdict, scriptTime, "[" + " | ".join(behaviorTags) + "]"))
 
     # Print what we've parsed out for debugging
     if debugFlag:

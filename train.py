@@ -25,7 +25,7 @@ def model_save():
 	'''
 	# 创建文件目录
 	Dir = r'./model/'
-	path = Dir + r'model-random-tree' + r'.pkl'
+	path = Dir + r'model-random-tree2' + r'.pkl'
 	# joblib.dump(model, path)
 	torch.save(model, path)
 
@@ -33,15 +33,17 @@ def model_save():
 if __name__ == '__main__':
 
 	# get all infos, csv
-	f = open(Dataset, 'a', encoding='utf-8', newline='')
-	write = csv.writer(f)
-	write.writerow(headers)
-	print('get malicious datasets......\n')
-	DataSet(path_malicious)
-	print('get mixed datasets......\n')
-	DataSet(path_mixed)
-	print('get benign datasets......\n')
-	DataSet(path_benign)
+	# f = open(Dataset, 'a', encoding='utf-8', newline='')
+	# write = csv.writer(f)
+	# write.writerow(headers)
+	# f.close()
+	#
+	# print('get malicious datasets......\n')
+	# DataSet(path_malicious)
+	# print('get mixed datasets......\n')
+	# DataSet(path_mixed)
+	# print('get benign datasets......\n')
+	# DataSet(path_benign)
 
 	# read features and labels from csv......
 	print('Read features and labels......\n')

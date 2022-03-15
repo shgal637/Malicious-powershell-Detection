@@ -2,6 +2,9 @@
 # 开发人员 : DELL
 # 开发时间 : 2022/3/8 14:03
 # 文件名称 : config.py
+import os
+from keras.models import load_model
+
 path_malicious = "./data/malicious_pure"             # 恶性样本相对路径
 path_mixed = "./data/mixed_malicious"                # 混杂样本相对路径
 path_benign = "./data/powershell_benign_dataset"     # 良性样本相对路径
@@ -24,3 +27,5 @@ NodeType = ['VariableExpressionAst', 'TypeExpressionAst', 'SubExpressionAst', 'S
                 'BinaryExpressionAst', 'AttributeAst',
                 'AssignmentStatementAst']
 
+if os.path.exists('./model/Fasttext_model.h5'):
+    FastTextmodel = load_model('./model/Fasttext_model.h5')

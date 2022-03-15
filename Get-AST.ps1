@@ -1,21 +1,4 @@
-﻿<#
-.SYNOPSIS
-    Generate AST of Powershell script to a XML file
-.DESCRIPTION
-    This script parses a Powershell script using System.Management.Automation.Language.Parser to
-    generate the corresponding AST (abstract syntax tree) as a XML file.
-.PARAMETER ps1
-    The path to the Powershell script.
-.PARAMETER ast
-    The path to the XML file.
-.EXAMPLE
-    C:\PS>
-    <Description of example>
-.NOTES
-    Author: @thewhiteninja
-    Date:   March 28, 2021
-#>
-
+﻿
 param (
     [ValidateScript({
             if(-Not ($_ | Test-Path -PathType Leaf) ){

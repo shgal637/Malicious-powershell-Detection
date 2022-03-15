@@ -1,3 +1,0 @@
-# Malicious-powershell-Detection
-1. 如果想要运行代码请先更改powershell的执行策略为Unrestricted，尤其是在出现xml文件找不到的错误时，建议管理员身份运行powershell并执行Get-ExecutionPolicy，然后使用Set-ExecutionPolicy及进行更改
-2. 在试验前请关闭防火墙等设置

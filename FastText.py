@@ -205,18 +205,17 @@ model.save("./Fasttext_model.h5")
 '''
 def fasttext_predict(code):
     np.random.seed(7)                            # 生成随机数种子
-    tokenizer = Tokenizer(num_words=1049940, lower=True, filters='')
+    
 
     maxlen = 256
 
-    if os.path.exists('./model/Fasttext_model.h5'):
-        model = load_model('./model/Fasttext_model.h5')
-   
     test_ps1 = code
     docs = create_docs_ps1(test_ps1)
+    tokenizer = Tokenizer(num_words=94539, lower=True, filters='')
+    tokenizer.fit_on_texts(docs)
     docs = tokenizer.texts_to_sequences(docs)
     docs = pad_sequences(sequences=docs, maxlen=maxlen)
-    y = model.predict(docs)
+    y = FastTextmodel.predict(docs)
     y_label = np.array([np.argmax(y, axis=1)])
     y_confidence = np.array([np.max(y, axis=1)])
     # Fasttext_vector = np.hstack((y_label.T, y_confidence.T))

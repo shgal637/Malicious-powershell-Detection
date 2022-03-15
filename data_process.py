@@ -115,26 +115,6 @@ def Extract_Features(path):
     return features
 
 
-def batch_process(batch):
-    '''
-    用于DataLoader装载数据时进一步处理batch数据
-    :param batch:batch size
-    :return:
-    '''
-    text_list, label_list = zip(*batch)
-    text_list_ = []
-
-    # token转化成ascii
-    for i in range(len(text_list)):
-        code = np.fromstring(text_list[i], dtype=np.uint8)  # <class 'numpy.ndarray'>
-        text_list_.append(torch.LongTensor(code))
-
-    text_list_ = pad_sequence(text_list_, batch_first=True, padding_value=0)  # padding数据
-    # 将数据类型转化成tensor
-    label_list = torch.tensor(label_list, dtype=torch.long)
-    return text_list_, label_list
-
-
 def alter_data(path):
     '''
      preprocess the script and get label

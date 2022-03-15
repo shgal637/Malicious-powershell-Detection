@@ -1,7 +1,8 @@
-from FastText import *
-from data_process import *
 
-if __name__ == '__main__':
-    path = 'testData/test2.ps1'
-    features = Extract_Features(path)
-    print(features)
+data = [1,0.09523809523809523,0.0,0.0,0.23809523809523808,0.0,0.0,0.047619047619047616,0.19047619047619047,0.09523809523809523,0.0,0.047619047619047616,0.0,0.0,0.0,0.0,0.09523809523809523,0.0,0.0,0.09523809523809523,0.09523809523809523,0.0,0.0,0.0,0,0,1.5657041680049215,101,46,116,109,110,1,6,65,24.333333333333332,0,0,0.97491723
+]
+features = data[1:]
+labels = data[0]
+print(features)
+print(len(features))
+print(labels)
